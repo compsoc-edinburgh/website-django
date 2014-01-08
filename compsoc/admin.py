@@ -3,7 +3,7 @@ from compsoc.models import Page
 
 class PageAdmin(admin.ModelAdmin):
     fieldsets = [
-        ('Page Meta', {'fields': ['name', 'nav_name', 'content_markup']} ),
+        ('Page Meta', {'fields': ['name', 'nav_name', 'is_in_navbar', 'content_markup']} ),
         ('Page Content', {'fields': ['title', 'content']} )
     ]
 
