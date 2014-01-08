@@ -1,0 +1,218 @@
+{% load static from staticfiles %}
+{% load markdown_deux_tags %}
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <title>COMPSOC - University of Edinburgh Computer Science Society</title>
+    
+    <meta charset="utf=8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes">
+    <link rel="stylesheet" href="{% static "compsoc/css/bootstrap.min.css" %}">
+    <link rel="stylesheet" href="{% static "compsoc/css/override.css" %}">
+    
+    <link rel="icon" type="image/ico" href="{% static "compsoc/img/favicon.ico" %}">
+    <link rel="apple-touch-icon" type="image/png" hrep="{% static "compsoc/img/compsoc-icon.png" %}">
+    
+    <!-- HTML 5 Shiv for Pre IE9: -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respons.min.js"></script>
+    <![endif] -->
+    </head>
+
+    <body>
+
+    <!--
+    <aside class="announce">
+        <div class="container">
+            <div class="alert alert-info alert-dismissable">
+                Hey Guys! Just a heads-up on the upcoming STMU this Friday in AT 4.04!
+                <button type="button" class="close" data-dismiss="alert" >&times;</button>
+            </div>
+        </div>
+    </aside>
+    -->
+
+    <header class="header">
+        <div class="container">
+        <!--[if IE]>
+            <img class="header-img" src="img/compsoc.png" alt="Compsoc Edinburgh" >
+        <![if !IE]-->
+            <img class="header-img" src="{% static "compsoc/img/compsoc.svg" %}" alt="CompSoc Edinburgh" >
+        <!-- <![endif]-->
+        </div>
+    </header>
+    
+    <nav class="navbar navbar-compsoc">
+        <div class="container">
+            <div class="navbar-header">
+                <!-- Toggle Navigation button for XS and SM -->
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+            </div>
+            
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                
+                {% for navpage in nav_pages %}
+                    {% if navpage.name == page.name %}
+                    <li class="active">
+                    {% else %}
+                    <li>
+                    {% endif %}
+                        <a href="/compsoc/{{ navpage.name }}">{{ navpage.nav_name }}</a>
+                    </li>
+                {% endfor %}
+                
+                </ul>
+                <!-- Navbar Search -->
+                <div class="nav navbar-nav navbar-right">
+                    <!-- TODO put search box here -->
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+    
+    
+    
+
+
+    <div class="content">
+        <div class="container">
+        
+        <!--[if lte IE 8]><div id="i-hate-ie">
+            <h3>WE LOVE HTML5, CSS3 AND KITTENS!</h3>
+            <p>Your browser, unfortunately, doesn't and we can't be bothered to write special CSS and stuff just so it works in fossilised browsers...</p>
+            <p>So maybe invest in something free like Chrome, Firefox and not IE!</p>
+        </div><![endif]-->
+    
+        <!-- Optional 3 column gallery: -->
+        <!--
+        <section class="gallery row">
+      
+        <div class="col-sm-4">
+            <h3>November STMU</h3>
+            <div class="row">
+                <div class="col-xs-4 col-sm-12 col-md-5">
+                    <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/xmas-cats.jpg" %}">
+                </div>
+                <div class="col-xs-8 col-sm-12 col-md-7">
+                    <p>Come on Friday the 29th to the Informatics Forum for free pizza! Someone also mentioned some tech talks and stuff...</p>
+                    <em>2013-11-29 18:00 to 20:00</em>
+                </div>
+            </div>
+        </div>
+      
+      <div class="col-sm-4">
+            <h3>New New Compsoc Website</h3>
+        <div class="row">
+          <div class="col-xs-4 col-sm-12 col-md-5">
+        <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/horse-onesie.jpg" %}">
+          </div>
+          <div class="col-xs-8 col-sm-12 col-md-7">
+        <p>Apparently there's a SIG for this but there's a bunch of first years on it so don't get your
+          hopes up... Anyone have experience building sites in Haskell??! <sup>Not even joking<sup>oh god</sup></sup>
+          YAY!</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-sm-4">
+            <h3>Random Latin Because...</h3>
+        <div class="row">
+          <div class="col-xs-4 col-sm-12 col-md-5">
+        <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/gent-cat.jpg" %}">
+          </div>
+          <div class="col-xs-8 col-sm-12 col-md-7">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis lorem ut lorem varius fringilla. Duis quis metus ligula. Donec ultricies posuere risus a fringilla.</p>
+          </div>
+        </div>
+      </div>
+      
+    </section>
+    -->
+    
+    <!-- Main content and Sidebar: -->
+    <div class="main row" role="main">
+        <div class="col-sm-8">
+        
+        <!-- MAIN PAGE CONTENT:  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   -->
+      
+        <article>
+            <div class="post-header">
+                <h1>{{page.title}}</h1>
+            </div>
+            {% if page.content_markup == 'markdown' %}
+                {{page.content|markdown}}
+            {% elif page.content_markup == 'html' %}
+                {{page.content|safe}}
+            {% elif page.content_markup == 'plain' %}
+                <pre>{{page.content|escape}}</pre>
+            {% endif %}
+        </article>
+      </div>
+      
+      
+      <!--  SIDEBAR  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   -->
+      
+      <aside class="col-sm-4 sidebar">
+        
+        <h1>Events</h1>
+        
+        <section class="event">
+              <div class="event-cal">
+                <div class="event-date"><span class="event-date-day">Fri</span> <span class="event-date-num">29th</span> <span class="event-date-mon">Nov 2013</span></div>
+                <div class="event-time">18:00</div>
+              </div>
+          <div class="event-description">
+        <h2>November STMU</h2>
+        <p>The monthly Student Tech Meetup for November: We have a line of speakers arranged for you and of course free pizza!</p>
+          </div>
+          <div style="clear: both;"></div>
+            </section>
+
+            <section class="event">
+          <div class="event-cal">
+                <div class="event-date"><span class="event-date-day">Tue</span> <span class="event-date-num">26th</span> <span class="event-date-mon">Nov 2013</span></div>
+                <div class="event-time">20:00</div>
+          </div>
+          <div class="event-description">
+        <h2>Weekly Social</h2>
+                <p>Pop down to Bar 50 on the Cowgate and have a chat, food, drink, whatever!</p>
+          </div>
+           <div style="clear: both;"></div>
+            </section>      
+        
+        <h1>Hop on the IRC Bandwaggon</h1>
+            <p>We have an IRC channel on irc.imaginarynet.org.uk, come along and chat on #compsoc.</p>
+
+            <h1>Connect with us!</h1>
+        <p>Like, +1, rebog, retweet and heart us on faceplustergumbletubenet!</p>
+        
+      </aside>
+    </div>
+    
+      </div>
+    </div>
+    
+    <div class="container">
+      <footer>
+    New New CompSoc Website FTW!
+    <span style="float: right;">Proudly not powered by WordPress</span>
+      </footer>
+    </div>
+    
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+    <script src="https://code.jquery.com/jquery.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="{% static "compsoc/js/bootstrap.min.js" %}"></script>
+  </body>
+
+
+</html>
