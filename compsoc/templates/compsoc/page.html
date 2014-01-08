@@ -162,35 +162,39 @@
         
         <h1>Events</h1>
         
+        {% for event in events %}
         <section class="event">
-              <div class="event-cal">
-                <div class="event-date"><span class="event-date-day">Fri</span> <span class="event-date-num">29th</span> <span class="event-date-mon">Nov 2013</span></div>
-                <div class="event-time">18:00</div>
-              </div>
-          <div class="event-description">
-        <h2>November STMU</h2>
-        <p>The monthly Student Tech Meetup for November: We have a line of speakers arranged for you and of course free pizza!</p>
-          </div>
-          <div style="clear: both;"></div>
-            </section>
-
-            <section class="event">
-          <div class="event-cal">
-                <div class="event-date"><span class="event-date-day">Tue</span> <span class="event-date-num">26th</span> <span class="event-date-mon">Nov 2013</span></div>
-                <div class="event-time">20:00</div>
-          </div>
-          <div class="event-description">
-        <h2>Weekly Social</h2>
-                <p>Pop down to Bar 50 on the Cowgate and have a chat, food, drink, whatever!</p>
-          </div>
-           <div style="clear: both;"></div>
-            </section>      
+            <div class="event-cal">
+                <div class="event-date">
+                    <span class="event-date-day">{{ event.when|date:'D' }}</span>
+                    <span class="event-date-num">{{ event.when|date:'dS' }}</span>
+                    <span class="event-date-mon">{{ event.when|date:'M Y' }}</span>
+                </div>
+                <div class="event-time">{{ event.when|date:'H:i' }}</div>
+            </div>
+            <div class="event-description">
+                <h2>{{ event.title }}</h2>
+                <p>{{ event.description }}</p>
+            </div>
+            <div style="clear: both;"></div>
+        </section>
+        {% endfor %}   
         
         <h1>Hop on the IRC Bandwaggon</h1>
-            <p>We have an IRC channel on irc.imaginarynet.org.uk, come along and chat on #compsoc.</p>
-
-            <h1>Connect with us!</h1>
+        <p>We have an IRC channel on irc.imaginarynet.org.uk, come along and chat on #compsoc.</p>
+        
+        <h1>Connect with us!</h1>
         <p>Like, +1, rebog, retweet and heart us on faceplustergumbletubenet!</p>
+        
+        <!--
+        <div id="widgetHerePlease">
+            Events from <a href="http://opentechcalendar.co.uk">Open Tech Calendar</a>
+        </div>
+        <script src="http://opentechcalendar.co.uk/widgetjs/listevents.js"></script>
+        <script>
+        OpenTechCalendarWidgetListEvents.place( 'widgetHerePlease' , { eventCount: 4, title: "Events in Edinburgh", locationId: 1 } );
+        </script> 
+        -->
         
       </aside>
     </div>
