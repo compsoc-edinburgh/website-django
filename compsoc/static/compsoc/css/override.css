@@ -201,6 +201,10 @@ body {
     background: #C6C6C6;
 }
 
+.navbar-compsoc input {
+    margin: 8px 0px;
+}
+
 
 /* Slightly different for collapsable Menu: */
 @media (max-width: 768px) {
