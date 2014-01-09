@@ -1,4 +1,5 @@
 *.dat
+*.json
 *.sqlite3
 *.log
 *.pot
