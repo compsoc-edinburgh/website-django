@@ -38,6 +38,7 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'markdown_deux',
     'compsoc',
+    'ledger',
 )
 
 MIDDLEWARE_CLASSES = (

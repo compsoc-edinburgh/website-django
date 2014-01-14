@@ -1,0 +1,12 @@
+{% extends "compsoc/base.html" %}
+
+{% block content %}
+    {% load markdown_deux_tags %}
+        <article>
+            <ul>
+                {% for ledger in ledgers %}
+                <li><a href='/ledger/show/{{ ledger.pk }}'>{{ ledger.date }}</a></li>
+                {% endfor %}
+            </ul>
+        </article>
+{% endblock %}
