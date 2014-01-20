@@ -38,7 +38,9 @@ INSTALLED_APPS = (
     'django.contrib.staticfiles',
     'markdown_deux',
     'compsoc',
-    'ledger',
+    'ilwhack',
+    'south',
+    'captcha',
 )
 
 MIDDLEWARE_CLASSES = (

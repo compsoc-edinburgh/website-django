@@ -1,0 +1,36 @@
+@font-face {
+  font-family: 'Andada';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Andada-Regular'), url(/static/ilwhack/fonts/andada.woff) format('woff');
+}
+@font-face {
+  font-family: 'Fjalla One';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Fjalla One'), local('FjallaOne-Regular'), url(/static/ilwhack/fonts/fjallaone.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 400;
+  src: local('Ubuntu Mono'), local('UbuntuMono-Regular'), url(/static/ilwhack/fonts/ubuntumono.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: normal;
+  font-weight: 700;
+  src: local('Ubuntu Mono Bold'), local('UbuntuMono-Bold'), url(/static/ilwhack/fonts/ubuntumono-bold.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: italic;
+  font-weight: 400;
+  src: local('Ubuntu Mono Italic'), local('UbuntuMono-Italic'), url(/static/ilwhack/fonts/ubuntumono-italic.woff) format('woff');
+}
+@font-face {
+  font-family: 'Ubuntu Mono';
+  font-style: italic;
+  font-weight: 700;
+  src: local('Ubuntu Mono Bold Italic'), local('UbuntuMono-BoldItalic'), url(/static/ilwhack/fonts/ubuntumono-bold-italic.woff) format('woff');
+}
