@@ -14,4 +14,5 @@ def home(request):
 def view_ledger(request, ledger_id=1):
     args = {}
     args['ledger'] = Ledger.objects.get(id=ledger_id)
+    args['ledgers']= Ledger.objects.all()
     return render_to_response('ledger/ledger.html', args)
