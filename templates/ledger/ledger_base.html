@@ -1,0 +1,18 @@
+{% extends "compsoc/base.html" %}
+
+{% block sidebar-header %}
+    Ledgers
+{% endblock %}
+
+{% block sidebar %}
+    {% load markdown_deux_tags %}
+        <article>
+            <ul>
+                {% for led in ledgers %}
+                <li><a href='/ledger/show/{{ led.pk }}'>{{ led.date }}</a></li>
+                {% endfor %}
+            </ul>
+        </article>
+{% endblock %}
+
+{% block announcement %}{% endblock %}
