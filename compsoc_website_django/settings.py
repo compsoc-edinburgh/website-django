@@ -39,8 +39,8 @@ INSTALLED_APPS = (
     'markdown_deux',
     'compsoc',
     'ilwhack',
-    'south',
     'captcha',
+    'south',
 )
 
 MIDDLEWARE_CLASSES = (

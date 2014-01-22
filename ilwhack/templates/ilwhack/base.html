@@ -61,8 +61,17 @@
                 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a href="/ilwhack">Home</a></li>
-                        <li><a href="/ilwhack/register">Register</a></li>
+                    
+                    {% for navpage in nav_pages %}
+                        {% if navpage.name == page.name %}
+                        <li class="active">
+                        {% else %}
+                        <li>
+                        {% endif %}
+                            <a href="{% url 'page' navpage.name %}">{{ navpage.nav_name }}</a>
+                        </li>
+                    {% endfor %}
+                    
                     </ul>
                     <div class="nav navbar-nav navbar-right">
                         <!-- nothing here for now -->
@@ -82,58 +91,11 @@
                     <p>So maybe invest in something free like Chrome, Firefox and not IE!</p>
                 </div><![endif]-->
                 
-                <!-- Optional 3 column gallery: -->
-                <!--
-                <section class="gallery row">
-                    
-                    <div class="col-sm-4">
-                        <h3>November STMU</h3>
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-12 col-md-5">
-                                <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/xmas-cats.jpg" %}">
-                            </div>
-                            <div class="col-xs-8 col-sm-12 col-md-7">
-                                <p>Come on Friday the 29th to the Informatics Forum for free pizza! Someone also mentioned some tech talks and stuff...</p>
-                                <em>2013-11-29 18:00 to 20:00</em>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <h3>New New Compsoc Website</h3>
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-12 col-md-5">
-                                <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/horse-onesie.jpg" %}">
-                            </div>
-                            <div class="col-xs-8 col-sm-12 col-md-7">
-                                <p>Apparently there's a SIG for this but there's a bunch of first years on it so don't get your
-                                hopes up... Anyone have experience building sites in Haskell??! <sup>Not even joking<sup>oh god</sup></sup>
-                                YAY!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <h3>Random Latin Because...</h3>
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-12 col-md-5">
-                                <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/gent-cat.jpg" %}">
-                            </div>
-                            <div class="col-xs-8 col-sm-12 col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis lorem ut lorem varius fringilla. Duis quis metus ligula. Donec ultricies posuere risus a fringilla.</p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                </section>
-                -->
-                
                 <!-- Main content and Sidebar: -->
                 <div class="main row" role="main">
                     <div class="col-sm-9">
                         
-                        <!-- MAIN PAGE CONTENT:  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   -->
+                        <!-- MAIN PAGE CONTENT: -->
                         
                         {% block content %}
                             <p>CONTENT GOES HERE</p>
@@ -141,7 +103,7 @@
                     </div>
             
             
-                    <!--  SIDEBAR  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   -->
+                    <!-- SIDEBAR -->
             
                     <aside class="col-sm-3 sidebar">  
                         {% block sidebar%}

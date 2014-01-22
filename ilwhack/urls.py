@@ -3,6 +3,7 @@ from django.views.generic.base import RedirectView
 from ilwhack import views
 
 urlpatterns = patterns('', 
-    url('^$', views.HomeView.as_view(), name='home')
+    url(r'^$', RedirectView.as_view(url='/ilwhack/page/students'), name='go-to-students'),
+    url(r'^page/(?P<page_name>[\w\-_]+)', views.PageView.as_view(), name='page'),
 )
   
