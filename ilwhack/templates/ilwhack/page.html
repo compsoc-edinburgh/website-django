@@ -1,17 +1,12 @@
 {% extends "ilwhack/base.html" %}
 
+{% block title %}
+    {{ page.nav_name }}
+{% endblock %}
+
 {% block content %}
     {% load markdown_deux_tags %}
     <article>
-        <div class="post-header">
-            <h1>{{page.title}}</h1>
-        </div>
-        {% if page.content_markup == 'markdown' %}
             {{page.content|markdown}}
-        {% elif page.content_markup == 'html' %}
-            {{page.content|safe}}
-        {% elif page.content_markup == 'plain' %}
-            <pre>{{page.content|escape}}</pre>
-        {% endif %}
     </article>
 {% endblock %}

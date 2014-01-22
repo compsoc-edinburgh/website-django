@@ -4,11 +4,10 @@ class Page(models.Model):
     name = models.CharField(max_length=64)
     nav_name = models.CharField(max_length=128)
     is_in_navbar = models.BooleanField()
-    title = models.CharField(max_length=128)
     content = models.TextField()
     
     def __unicode__(self):
-        return self.title
+        return self.nav_name
 
 class Participant(models.Model):
   username = models.CharField(max_length=200, unique=True)
