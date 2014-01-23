@@ -108,7 +108,15 @@
             
                     <aside class="col-sm-3 sidebar">  
                         {% block sidebar%}
-                            <p>SIDEBAR GOES HERE</p>
+                            <form action="/ilwhack/login" method="POST" role="form">
+                                <div class="form-group">
+                                    <label for="loginUsername">Username</label>
+                                    <input type="text" id="loginUsername" class="form-control" name="username" placeholder="Username">
+                                    <label for="loginPassword">Password</label>
+                                    <input type="password" class="form-control" name="password" placeholder="Password">
+                                    <button type="submit" class="btn btn-default">Login</button>
+                                </div>
+                            </form>
                         {% endblock %}
                     </aside>
                 </div>
