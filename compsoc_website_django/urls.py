@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     url(r'^$', RedirectView.as_view(url="/compsoc/page/home"), name="go-to-home"),
     url(r'^compsoc/', include('compsoc.urls')),
     url(r'^ilwhack/', include('ilwhack.urls')),
+    url(r'^ledger/',  include('ledger.urls')),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
