@@ -1,0 +1,12 @@
+{% extends "ilwhack/base.html" %}
+
+{% block title %}
+    {{ page.nav_name }}
+{% endblock %}
+
+{% block content %}
+    {% load markdown_deux_tags %}
+    <article>
+            {{page.content|markdown}}
+    </article>
+{% endblock %}
