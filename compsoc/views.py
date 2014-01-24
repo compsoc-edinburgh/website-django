@@ -23,14 +23,13 @@ class SearchView(TemplateView):
         if form.is_valid():
         
             query = form.cleaned_data['query']
-            if query == None:
-                query = ""
             context = {}
             # TODO make this more efficient maybe
-            context['page_results'] = Page.objects.filter(content__icontains=query).values('name', 'title')
+            context['page_results'] = Page.objects.filter(content__icontains=query).values('name', 'title') or []
             #context.event_results = Event.objects.filter(description__icontains=query).values('url', 'title') # TODO
             context['query'] = query
             return render(request, self.template_name, context)
         
         else:
-            return render(request, self.template_name, { page_results: [] })
+            #this is causing errors!
+            return render(request, self.template_name, {})
