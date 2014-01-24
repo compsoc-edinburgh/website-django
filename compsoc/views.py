@@ -31,5 +31,4 @@ class SearchView(TemplateView):
             return render(request, self.template_name, context)
         
         else:
-            #this is causing errors!
             return render(request, self.template_name, {})
