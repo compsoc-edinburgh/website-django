@@ -23,6 +23,8 @@ class SearchView(TemplateView):
         if form.is_valid():
         
             query = form.cleaned_data['query']
+            if query == None:
+                query = ""
             context = {}
             # TODO make this more efficient maybe
             context['page_results'] = Page.objects.filter(content__icontains=query).values('name', 'title')
