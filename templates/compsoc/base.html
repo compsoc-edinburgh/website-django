@@ -65,7 +65,7 @@
                         {% else %}
                         <li>
                         {% endif %}
-                            <a href="{}">{{ navpage.nav_name }}</a>
+                        <a href="{% url 'page' navpage.name %}">{{ navpage.nav_name }}</a>
                         </li>
                     {% endfor %}
                     
