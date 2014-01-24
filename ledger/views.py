@@ -7,7 +7,9 @@ from compsoc.models import Page, Event
 def home(request):
     # lists ledgers in reverse order
     args = {}
-    args['ledgers']= Ledger.objects.all()
+    ledgers = Ledger.objects.all()
+    args['ledgers']= ledgers.order_by('content','id').reverse()
+    args['ledger'] = args['ledgers'].first()
 
     return render_to_response('ledger/ledger_base.html', args)
 

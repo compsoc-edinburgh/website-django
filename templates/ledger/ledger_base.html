@@ -1,4 +1,6 @@
 {% extends "compsoc/base.html" %}
+{% block announcement %}{% endblock %}
+{% block event %}{% endblock %}
 
 {% block sidebar-header %}
     Ledgers
@@ -15,4 +17,11 @@
         </article>
 {% endblock %}
 
-{% block announcement %}{% endblock %}
+
+{% block content %}
+    {% load markdown_deux_tags %}
+        <article>
+            <h1>{{ ledger.date }}</h1></ br>
+            <p>{{ ledger.content|markdown }}</p>
+        </article>
+{% endblock %}

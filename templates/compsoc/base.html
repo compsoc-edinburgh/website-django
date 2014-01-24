@@ -155,6 +155,7 @@
             
                     <aside class="col-sm-4 sidebar">
                         
+                        {% block event %}
                         <h1>Events</h1>
 
                         {% for event in events %}
@@ -174,6 +175,7 @@
                             <div style="clear: both;"></div>
                         </section>
                         {% endfor %}   
+                        {% endblock %}
 
                         <h1>{% block sidebar-header %}{% endblock %}</h1>
                         
