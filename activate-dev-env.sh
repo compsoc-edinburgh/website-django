@@ -1,2 +1,3 @@
 #!/bin/sh
-bash -c "source COMPSOCENV/bin/activate; bash"
+source COMPSOCENV/bin/activate
+bash -c "source COMPSOCENV/bin/activate; $SHELL"
