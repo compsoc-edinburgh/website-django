@@ -7,6 +7,35 @@
 {% block content %}
     {% load markdown_deux_tags %}
     <article>
-            {{page.content|markdown}}
+            {{page.content|markdown:"trusted"}}
     </article>
+{% endblock %}
+
+{% block sidebar %}
+  <!--
+    <form action="/ilwhack/login" method="POST" role="form" class="">
+        <div class="form-group">
+            <label for="loginUsername">Username</label>
+            <input type="text" id="loginUsername" class="form-control" name="username" placeholder="Username" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <label for="loginPassword">Password</label>
+            <input type="password" class="form-control" name="password" placeholder="Password" disabled="disabled">
+        </div>
+        <div class="form-group">
+            <div class="btn-group">
+                <button type="submit" class="btn btn-default" disabled="disabled">Login</button>
+                <a href="#/ilwhack/register" class="btn btn-default disabled">Register</a>
+            </div>
+        </div>
+    </form>
+    <p class="text-warning">Registrations will be opening soon.</p>
+
+    <hr />
+  -->
+
+    <div>
+	<h3>Sponsors:</h3>
+        <a href="/compsoc"><img src="http://comp-soc.com/static/compsoc/img/compsoc.png" class="img-responsive" alt="CompSoc"/></a>
+    </div>
 {% endblock %}
