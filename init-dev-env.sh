@@ -1,6 +1,6 @@
 #!/bin/sh
-virtualenv COMPSOCENV
-source COMPSOCENV/bin/activate
+#virtualenv COMPSOCENV
+source $COMPSOCENV/bin/activate
 pip install -r requirements.txt
 python manage.py syncdb
 python manage.py schemamigration --auto captcha
