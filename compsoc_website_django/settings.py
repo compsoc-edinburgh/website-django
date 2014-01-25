@@ -26,6 +26,16 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+MARKDOWN_DEUX_STYLES = {
+    "trusted": {
+        "extras": {
+            "code-friendly": None,
+        },
+        # Allow raw HTML (WARNING: don't use this for user-generated
+        # Markdown for your site!).
+        "safe_mode": False,
+    }
+}
 
 # Application definition
 
