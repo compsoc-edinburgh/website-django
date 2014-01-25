@@ -241,7 +241,54 @@ body {
 
 }
 
+/* Error Pages */
 
+#error-page {
+    text-align: center;
+    padding: 40px 0px;
+    background-image: url("http://thecatapi.com/api/images/get");
+    background-position: center;
+}
+
+#error-page .error-number {
+    color: #000;
+    font-size: 200px;
+    font-weight: normal;
+    text-shadow:
+    -5px -5px 0 #EEE,  
+     5px -5px 0 #EEE,
+    -5px  5px 0 #EEE,
+     5px  5px 0 #EEE;
+}
+
+#error-page .error-desc {
+    color: #000;
+    text-transform: none;
+    font-size: 50px;
+    text-shadow:
+   -2px -2px 0 #EEE,  
+    2px -2px 0 #EEE,
+    -2px 2px 0 #EEE,
+     2px 2px 0 #EEE;
+}
+
+#error-page .error-search {
+    margin: 15px auto;
+    clear: both;
+}
+
+    #error-page .error-search input[type=text] {
+	width: 250px;
+    }
+
+#error-page .but-cats h3 {
+    color: #000;
+    text-shadow:
+    -1px -1px 0 #FFF,
+     1px -1px 0 #FFF,
+    -1px  1px 0 #FFF,
+     1px  1px 0 #FFF;
+}
 
 /*  CONTENT STYLES  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
 
