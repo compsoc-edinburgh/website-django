@@ -212,7 +212,13 @@
             function PopulateEvents(data) {                                                              
                 console.log(data.data);                                                        
                 var cal = data.data;                                                           
-                for(i = 0; i < cal.length; i++) {                                              
+                var len = 3;
+                var leng = len;
+                if(cal.length <= len) leng = cal.length;
+                for(i = 0; i < leng; i++) {                                              
+                    //TODO get the time so I can pull it apart
+                    var desc = cal[i].description;
+                    if(desc.length > 50) desc = desc.substring(0,50)+"...";
                     var ev = "";
                     ev = "<section class='event'><div class='event-cal'><div class='event-date'><span class='event-date-day'>";
                     ev += cal[i].start.displaylocal;
@@ -221,8 +227,8 @@
                     ev += "<div class='event-time'></div>";
                     ev += "</div>";
                     ev += "<div class='event-description'>";
-                    ev += "<h2>"+cal[i].summary+"</h2>";
-                    ev += "<p>"+cal[i].description+"</p>";
+                    ev += "<a href='"+cal[i].url+"'><h2>"+cal[i].summary+"</h2></a>";
+                    ev += "<p>"+desc+"</p>";
                     ev += "</div>";
                     ev += "<div style='clear: both;'></div>";
 
