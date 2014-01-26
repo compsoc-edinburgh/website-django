@@ -2,18 +2,6 @@
  * C O M P S O C    B O O T S T R A P    C S S    O V E R R I D E
  * Party like it's the nineties
  *
- *
- * COLOURS:
- * red          : #D3371E
- * official red : #CE0E00
- * blue         : #00497F
- * accent       : #D5D5D5
- * beige        : #83786E
- * lbeige       : #DBCBBB
- * lgrey        : #F7F7F7
- * dgrey        : #E4E4E4
- * body text    : #585856
- *
 **/
 
 /* Custom WebKit scrollbars because why not... */
@@ -70,54 +58,14 @@ body {
 	padding: 0px;
 	min-height: 100px;
     }
-    
-    .header .header-img {
-	width: 269px;
-	height: 100px;
-	max-height: 100px;
-	padding: 29.5px 0px;
-	padding-left: 35px;
-    }
-
-    @media (max-width: 520px) {
-	.header .header-img {
-	    width: 202px;
-	    height: auto;
-	    padding: 35.5px 0px;
-	    padding-left: 30px;
-	}
-    }
 
 .userpanel {
      font-family: Impact, arial, sans-serif;
-     height: 100px;
-     min-height: 100px;
-     width: 200px;
 }
-
-@media (max-width: 768px) {
-    .userpanel { padding-right: 15px; }
-}
-
-    .userpanel .userinfo {
-	float: right;
-	padding-right: 20px;
-    }
 
     .userpanel h3 {
 	font-family: Impact, arial, sans-serif;
-        font-size: 18px;
         color: #0000FF;
-    }
-
-    .userpanel img.user-avatar {
-	float: right;
-	border-radius: 30px;
-	border: 3px solid #D3371E;
-	margin: 17.5px 0px;
-	width: 60px;
-	height: 60px;
-	background: #0E0E0E;
     }
 
 
@@ -125,17 +73,11 @@ body {
 /*  NAVIGATION STYLES  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
 
 .navbar-compsoc {
-    margin: 0;
-    border: 0;
     background: #FF2093;
     font-family: 'Comic Sans', 'Comic Sans MS', 'Impact', sans-serif;
     font-weight: bold;
-    font-size: 16px;
 }
  /* Navbar Resets */
-.navbar-compsoc > .container { padding-left: 0; }
-.navbar-compsoc .navbar-collapse { padding-left: 0; overflow-y: visible; }
-.navbar-compsoc .navbar-nav { margin: 0; }
 .navbar-compsoc .navbar-toggle { border-color: #BCBCBA; }
 .navbar-compsoc .navbar-toggle .icon-bar { background: #585856; }
 .navbar-compsoc .navbar-toggle .icon-bar + .icon-bar { margin-top: 4px; }
@@ -145,30 +87,16 @@ body {
 .navbar-compsoc .open > a .caret,
 .navbar-compsoc .open > a:hover .caret,
 .navbar-compsoc .open > a:focus .caret  { border-top-color: #FF2093; border-bottom-color: #FF2093; }
-.navbar-compsoc .caret { margin-left: 5px; }
-
-.navbar-compsoc .navbar-collapse {
-    max-height: none;
-}
 
 .navbar-compsoc li > a,
 .navbar-compsoc li.active > a {
     color: #00FF00;
-    height: 50px;
-}
-
-.navbar-compsoc .dropdown-menu li > a {
-    height: auto;
 }
 
 .navbar-compsoc li > a:focus,
 .navbar-compsoc li > a:hover,
 .navbar-compsoc li > a:active {
     color: #FF2093;
-}
-
-.navbar-compsoc .dropdown-menu > li > a {
-    padding: 8px 20px;
 }
 
 .navbar-compsoc .dropdown-menu > li > a:hover,
@@ -189,8 +117,6 @@ body {
 
 .navbar-compsoc ul.dropdown-menu {
     background-color: #FF2093;
-    border: 0;
-    padding: 0px;
 }
 
 .navbar-compsoc .nav .open > a,
@@ -201,22 +127,11 @@ body {
     background: #00FF00;
 }
 
-.navbar-compsoc input {
-    margin: 8px 0px;
-}
-
-
 /* Slightly different for collapsable Menu: */
 @media (max-width: 768px) {
     
-    .navbar-compsoc .navbar-collapse {
-	padding-left: 30px;
-	padding-bottom: 20px;
-    }
-    
     .navbar-compsoc li.active > a {
 	background: #FF2093;
-	border: 0;
     }
 
     .navbar-compsoc li > a:hover,
@@ -232,13 +147,6 @@ body {
 	background: #00FF00;
     }
     
-    .navbar-compsoc .open > a,
-    .navbar-compsoc .open > a:hover,
-    .navbar-compsoc .open > a:focus { 
-	color: #111;
-	background: #C6C6C6;
-    }
-    
 
 }
 
@@ -252,11 +160,7 @@ body {
 }
 
 .gallery {
-    padding: 0px 15px;
-    padding-bottom: 15px;
     border-bottom: 3px dashed #FF0000;
-    margin-left: -30px;
-    margin-right: -30px;
     /* Override some .row properties so 
        the border styles correctly */
     font-family: 'Comic Sans', 'Comic Sans MS', sans-serif;
@@ -264,22 +168,8 @@ body {
 
     .gallery h3 {
 	color: #0000FF;
-	text-transform: uppercase;
 	font-size: 20px;
 	font-family: Impact, sans-serif;
-    }
-
-
-.main {
-    padding: 30px 0px;
-}
-
-.main .post-header {
-    margin-bottom: 20px;
-}
-
-    .main .post-header h3 {
-	font-size: 12px;
     }
 
 
@@ -287,19 +177,15 @@ body {
 
 .sidebar {
     border-left: 4px dotted #00FF00;
-    padding: 15px;
 }
 
     .sidebar h1 {
 	color: #FFFF00;
-	font-size: 20px;
-	margin: 10px 0px;
     }
 
 @media (max-width: 768px ) {
 
     .sidebar {
-	border: 0;
 	border-top: 5px dashed #00FFFF;
     }
 
@@ -309,55 +195,20 @@ body {
 /*  ANNOUNCE STYLE:  -- -- -- -- -- -- -- -- -- -- */
 
 .announce {
-    padding: 0;
     color: #FF2093;
     background: #00FFFF;
     font-family: consolas, monospace;
-    text-transform: uppercase;
-    font-size: 16px;
 }
 
-.announce > .container {
-    padding: 0px;
-}
-
-.announce .alert {
-    background: none;
-    border: 0;
-    padding: 5px 0px;
-    margin: 0;
-}
-
-@media (max-width: 768px) {
-    .announce .alert {
-        padding: 5px 30px;
-    }
-}
-
-    .announce .alert-success { color: #DFF0D8; }
     .announce .alert-info { color: #FF2093; }
-    .announce .alert-warning { color: #FAEBCC; }
-    .announce .alert-danger { color: #EBCCD1; }
 
 /*  FOOTER STYLE  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
 
 footer {
     background: #DD00D0;
     border-top: 5px dotted #00FFFF;
-    margin-left: -15px;
-    margin-right: -15px;
-    margin-bottom: 40px;
-    padding: 40px 20px;
     color: #00FFFF;
-    font-size: 20px;
-    text-transform: uppercase;
     font-family: 'Papyrus', 'Comic Sans', 'Comic Sans MS', sans-serif;
-}
-
-@media (max-width: 768px) {
-    footer {
-	margin-bottom: 0px;
-    }
 }
 
 /*  FORMATTING  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   */
@@ -369,7 +220,7 @@ blockquote {
     font-family: 'Papyrus', sans-serif;
     font-size: 20px;
     color: #00AAEE;
-    border-left: 5px solid #E4E4E4;
+    border: none;
 }
 
     blockquote cite {
@@ -380,140 +231,28 @@ blockquote {
     }
 
 
-/* ADDED CLASS: Centres Blocks and Text */
-.centre { text-align: center; margin: 0px auto; }
-
-
-code {
-    background: #E9E9E9;
-    font-size: inherit;
-}
-
-
-dl {
-        display: block;
-        padding: 0px 10px 20px 10px;
-        margin-top: 10px;
-        border-top: 3px solid #E4E4E4;
-        color: #808080;
-}
-
-dt {
-        font-size: 110%;
-        padding-top: 20px;
-        padding-bottom: 10px;
-	font-weight: normal;
-	color: #111;
-}
-        dt::after { content: " :~"; }
-
-dd {
-        font-size: 90%;
-        text-indent: 20px;
-}
-
-
 /* ADDED CLASS: Nice calendary date render */
-.event {
-    clear: both;
-    display: block;
-    padding-bottom: 10px;
-}
 
     .event .event-cal {
-	width: 70px;
-	line-height: 1.1;
-	float: left;
 	background: #00FFFF;
 	border: 1px solid #00F;
-	border-radius: 2px;
 	color: #FF2093;
-	margin-right: 10px;
-	text-align: center;
     }
     
     .event h2 {
 	color: #00A0A0;
 	font-size: 20px;
-	font-weight: normal;
-	padding-bottom: 10px;
-	padding-top: 0px;
-	margin: 0;
     }
     
     .event .event-description {
 	margin-left: 80px;
     }
 
-    .event .event-description p { font-size: 90%; line-height: 110%; }
-    .event .event-date { padding: 5px; }
-    .event .event-date-day { display: block; font-size: 100%; }
-    .event .event-date-num { display: block; font-size: 150%; }
-    .event .event-date-mon { display: block; font-size: 70%; }
     .event .event-time {
         padding: 5px;
         background: #00FF00;
         border-top: 1px solid #00F;
     }
-
-/* ADDED CLASS: Renders a div.footnote as references/ sources */
-.footnote {
-    display: block;
-    padding: 10px 10px;
-    margin-top: 20px;
-    border-top: 1px solid #D3371E;
-    color: #808080;
-    font-size: inherit;
-    font-style: italic;
-}
-
-
-hr {
-    padding: 5px 0px;
-    margin: 0;
-    border: 0;
-    border-top: 3px solid #E0E0E0;
-}
-
-
-.main iframe { margin: 10px 0px; width: 100% !important; }
-
-
-.main img { margin: 0px auto; }
-
-
-.mar-5  { margin: 5px;  }
-.mar-10 { margin: 10px; }
-.mar-15 { margin: 15px; }
-.mar-20 { margin: 20px; }
-.mar-30 { margin: 30px; }
-.mar-lr-5  { margin: 0px 5px;  }
-.mar-lr-10 { margin: 0px 10px; }
-.mar-lr-15 { margin: 0px 15px; }
-.mar-lr-20 { margin: 0px 20px; }
-.mar-lr-30 { margin: 0px 30px; }
-
-ol ol {
-    list-style: lower-latin;
-}
-
-ol ol ol {
-    list-style: lower-roman;
-}
-
-
-/* ADDED CLASSES: Adds padding */
-.pad-5  { padding: 5px;  }
-.pad-10 { padding: 10px; }
-.pad-15 { padding: 15px; }
-.pad-20 { padding: 20px; }
-.pad-30 { padding: 30px; }
-.pad-lr-5  { padding: 0px 5px;  }
-.pad-lr-10 { padding: 0px 10px; }
-.pad-lr-15 { padding: 0px 15px; }
-.pad-lr-20 { padding: 0px 20px; }
-.pad-lr-30 { padding: 0px 30px; }
-
 
 pre {
     font-family: 'Times New Roman', consolas, monospace;
@@ -525,43 +264,6 @@ pre {
     background: #FF1111;
 }
 
-
-table.table {
-    border-top: 3px solid #E0E0E0;
-}
-
 table.table thead {
-    font-size: 120%;
     font-family: Impact, sans-serif;
 }
-
-table.table tr {
-    border-bottom: 1px solid #E0E0E0;
-    border-left: 1px dashed #E0E0E0;
-}
-
-table.table td {
-    border-right: 1px dashed #E0E0E0;
-}
-
-
-
-
-#i-hate-ie {
-    padding: 40px 40px;
-    background: #080808;
-    color: #FFF;
-    margin-left: -30px;
-    margin-right: -30px;
-    margin-top: -20px;
-}
-    #i-hate-ie h3 {
-        color: #FFF;
-        font-size: 60px;
-    }
-    #i-hate-ie p {
-        padding: 0;
-        margin: 0;
-        font-family: 'Fjalla One', Helvetica, Helvetica-Neue, arial, sans-serif;
-        font-size: 16px;
-    }
