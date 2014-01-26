@@ -170,7 +170,10 @@
                             <div style="clear: both;"></div>
                         </section>
                         {% endfor %}   
-                        
+                        <!-- using the hasacalendar.com api -->
+                        <div id="events">
+                        </div>
+                        <!-- end hasacalendar -->
                         {% block sidebar%}
                         <h1>Hop on the IRC Bandwaggon</h1>
                         <p>We have an IRC channel on irc.imaginarynet.org.uk, come along and chat on #compsoc.</p>
@@ -205,6 +208,32 @@
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery.js"></script>
+        <script>
+            function PopulateEvents(data) {                                                              
+                console.log(data.data);                                                        
+                var cal = data.data;                                                           
+                for(i = 0; i < cal.length; i++) {                                              
+                    var ev = "";
+                    ev = "<section class='event'><div class='event-cal'><div class='event-date'><span class='event-date-day'>";
+                    ev += cal[i].start.displaylocal;
+                    ev += "</span>";
+                    ev += "</div>";
+                    ev += "<div class='event-time'></div>";
+                    ev += "</div>";
+                    ev += "<div class='event-description'>";
+                    ev += "<h2>"+cal[i].summary+"</h2>";
+                    ev += "<p>"+cal[i].description+"</p>";
+                    ev += "</div>";
+                    ev += "<div style='clear: both;'></div>";
+
+                    ev += "</section>";
+                    $("#events").append(ev);                      
+                    //console.log(cal[i].summary);                                               
+                }                                                                              
+                //console.log(data.data.length);                                                 
+            }                                                                                  
+        </script>
+        <script src="http://compsoc.api1.hasacalendar.co.uk/event/jsonp?callback=PopulateEvents"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static "compsoc/js/bootstrap.min.js" %}"></script>
   </body>
