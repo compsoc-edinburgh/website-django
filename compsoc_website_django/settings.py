@@ -51,8 +51,10 @@ INSTALLED_APPS = (
     'ilwhack',
     'ledger',
     'captcha',
-    'south',
 )
+
+if not DEBUG:
+    INSTALLED_APPS += 'south'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
