@@ -558,3 +558,9 @@ table.table td {
         font-family: 'Fjalla One', Helvetica, Helvetica-Neue, arial, sans-serif;
         font-size: 16px;
     }
+    
+/* Sponsor's logos */
+img.sponsor-logo {
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
