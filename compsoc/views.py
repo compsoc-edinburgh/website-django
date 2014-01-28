@@ -25,6 +25,7 @@ class SearchView(TemplateView):
             query = form.cleaned_data['query']
             context = {}
             # TODO make this more efficient maybe
+            context['nav_pages'] = Page.objects.filter(is_in_navbar__exact=True).values('name', 'nav_name')
             context['page_results'] = Page.objects.filter(content__icontains=query).values('name', 'title') or []
             #context.event_results = Event.objects.filter(description__icontains=query).values('url', 'title') # TODO
             context['query'] = query
