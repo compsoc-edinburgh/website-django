@@ -5,7 +5,7 @@
         <div class="post-header">Search Results: {{ query }}</div>
         <ul>
             {% for result in page_results %}
-            <li><a href="{% url 'page' result.name %}">{{ result.title }}</a></li>
+            <li><a href="{% url 'compsoc-page' result.name %}">{{ result.title }}</a></li>
             {% endfor %}
         </li>        
     </article>
