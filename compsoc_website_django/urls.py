@@ -17,3 +17,7 @@ urlpatterns = patterns('',
     url(r'^captcha/', include('captcha.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+urlpatterns += patterns('',
+        (r'^404/$', 'django.views.generic.simple.direct_to_template', {'template': '404.html'}),
+    )
