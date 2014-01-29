@@ -51,10 +51,8 @@ INSTALLED_APPS = (
     'ilwhack',
     'ledger',
     'captcha',
+    'south',
 )
-
-if not DEBUG:
-    INSTALLED_APPS += 'south'
 
 MIDDLEWARE_CLASSES = (
     'django.contrib.sessions.middleware.SessionMiddleware',
@@ -78,6 +76,10 @@ DATABASES = {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
+    
+SOUTH_MIGRATION_MODULES = {
+    'captcha' : 'ignore',
 }
 
 # Internationalization
