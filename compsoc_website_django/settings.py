@@ -51,6 +51,7 @@ INSTALLED_APPS = (
     'ilwhack',
     'ledger',
     'captcha',
+    'accounts',
 )
 
 if not DEBUG:

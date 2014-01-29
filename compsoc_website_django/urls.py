@@ -14,6 +14,7 @@ urlpatterns = patterns('',
     url(r'^compsoc/', include('compsoc.urls')),
     url(r'^ilwhack/', include('ilwhack.urls')),
     url(r'^ledger/',  include('ledger.urls')),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^captcha/', include('captcha.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )

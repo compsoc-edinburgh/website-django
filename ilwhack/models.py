@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Page(models.Model):
     name = models.CharField(max_length=64)
@@ -10,17 +11,20 @@ class Page(models.Model):
         return self.nav_name
 
 class Participant(models.Model):
-  username = models.CharField(max_length=200, unique=True)
-  real_name = models.CharField(max_length=200)
-  matric = models.CharField(max_length=8)
-  email = models.EmailField()
+  user = models.ForeignKey(User)
   is_leader = models.BooleanField(default=False)
-  team = models.ForeignKey('Team', null=True, related_name='members')
+  team = models.ForeignKey('Team', null=True, blank=True, related_name='members')
+  
+  def __unicode__(self):
+      return self.user.username
 
 
 class Team(models.Model):
   name = models.CharField(max_length=200, unique=True)
   project = models.OneToOneField('Project', null=True, related_name='leaderof')
+  
+  def __unicode__(self):
+      return self.name
 
 
 class Project(models.Model):
@@ -28,3 +32,6 @@ class Project(models.Model):
   pitch = models.TextField(blank=True)
   web = models.URLField(null=True, blank=True)
   repo = models.URLField(null=True, blank=True)
+  
+  def __unicode__(self):
+        self.name
