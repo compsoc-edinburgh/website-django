@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 
 class Page(models.Model):
     name = models.CharField(max_length=64)
@@ -10,12 +11,11 @@ class Page(models.Model):
         return self.nav_name
 
 class Participant(models.Model):
-  username = models.CharField(max_length=200, unique=True)
-  real_name = models.CharField(max_length=200)
+  display_name = models.CharField(max_length=200)
   matric = models.CharField(max_length=8)
-  email = models.EmailField()
   is_leader = models.BooleanField(default=False)
   team = models.ForeignKey('Team', null=True, related_name='members')
+  user = models.OneToOneField(User)
 
 
 class Team(models.Model):

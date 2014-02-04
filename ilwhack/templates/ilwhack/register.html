@@ -1,1 +1,14 @@
 {% extends 'ilwhack/base.html' %}
+
+{% block content %}
+<form action="/ilwhack/register/" method="post">
+    {% for field in form %}
+        <div class="form-group">
+            {{ field.errors }}
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
+    {% csrf_token %}
+    <p><input class="btn" type="submit" value="Register"/></p>
+</form>
+{% endblock %}
