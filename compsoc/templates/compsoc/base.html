@@ -194,6 +194,7 @@
         
         <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
         <script src="https://code.jquery.com/jquery.js"></script>
+        <script src="{% static "compsoc/js/moment.min.js" %}"></script>
         <script>
             function PopulateEvents(data) {                                                              
                 console.log(data.data);                                                        
@@ -204,10 +205,20 @@
                 for(i = 0; i < leng; i++) {                                              
                     //TODO get the time so I can pull it apart
                     var desc = cal[i].description;
+                    var time = moment.unix(cal[i].start.timestamp).format();
+                    console.log(time);
                     if(desc.length > 50) desc = desc.substring(0,50)+"...";
                     var ev = "";
                     ev = "<section class='event'><div class='event-cal'><div class='event-date'><span class='event-date-day'>";
-                    ev += cal[i].start.displaylocal;
+                    ev += "<span class='event-date-day'>";
+                    ev += "" + day(moment(time).day());
+                    ev += "</span>";
+                    ev += "<span class='event-date-num'>";
+                    ev += format_date(moment(time).date());
+                    ev += "</span>";
+                    ev += "<span class='event-date-mon'>";
+                    ev += format_month(moment(time).month());
+                    ev += "</span>";
                     ev += "</span>";
                     ev += "</div>";
                     ev += "<div class='event-time'></div>";
@@ -224,6 +235,35 @@
                 }                                                                              
                 //console.log(data.data.length);                                                 
             }                                                                                  
+            function day(t) {
+                if(t == 1) return "Mon";
+                else if(t == 2) return "Tue";
+                else if(t == 3) return "Wed";
+                else if(t == 4) return "Thur";
+                else if(t == 5) return "Fri";
+                else if(t == 6) return "Sat";
+                else return "Sun";
+            }
+            function format_date(day) {
+                if(day > 3) return day + "th";
+                else if (day == 3) return "3rd";
+                else if (day == 2) return "2nd";
+                else if (day == 1) return "1st";
+            }
+            function format_month(month) {
+                if (month == 0) return "Jan";
+                else if (month == 1) return "Feb";
+                else if (month == 2) return "Mar";
+                else if (month == 3) return "Apr";
+                else if (month == 4) return "May";
+                else if (month == 5) return "Jun";
+                else if (month == 6) return "Jul";
+                else if (month == 7) return "Aug";
+                else if (month == 8) return "Sep";
+                else if (month == 9) return "Oct";
+                else if (month == 10) return "Nov";
+                else return "Dec";
+            }
         </script>
         <script src="http://compsoc.api1.hasacalendar.co.uk/event/jsonp?callback=PopulateEvents"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
