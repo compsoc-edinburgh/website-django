@@ -155,7 +155,24 @@
                     <aside class="col-sm-4 sidebar">
                         
                         <h1>Events</h1>
- 
+
+                        {% for event in events %}
+                        <section class="event">
+                            <div class="event-cal">
+                                <div class="event-date">
+                                    <span class="event-date-day">{{ event.when|date:'D' }}</span>
+                                    <span class="event-date-num">{{ event.when|date:'dS' }}</span>
+                                    <span class="event-date-mon">{{ event.when|date:'M Y' }}</span>
+                                </div>
+                                <div class="event-time">{{ event.when|date:'H:i' }}</div>
+                            </div>
+                            <div class="event-description">
+                                <h2>{{ event.title }}</h2>
+                                <p>{{ event.description }}</p>
+                            </div>
+                            <div style="clear: both;"></div>
+                        </section>
+                        {% endfor %}   
                         <!-- using the hasacalendar.com api -->
                         <div id="events">
                         </div>
