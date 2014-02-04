@@ -1,5 +1,5 @@
 from django.contrib import admin
-from compsoc.models import Page
+from compsoc.models import Page, Event
 
 class PageAdmin(admin.ModelAdmin):
     fieldsets = [
@@ -8,3 +8,4 @@ class PageAdmin(admin.ModelAdmin):
     ]
 
 admin.site.register(Page, PageAdmin)
+admin.site.register(Event)

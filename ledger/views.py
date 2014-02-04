@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from django.shortcuts import render_to_response
 from ledger.models import Ledger
-from compsoc.models import Page
+from compsoc.models import Page, Event
 
 # Create your views here.
 def home(request):
