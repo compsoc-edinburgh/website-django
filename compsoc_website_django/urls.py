@@ -1,6 +1,7 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic.base import RedirectView
-from compsoc import views
+from django.views.generic.base import RedirectView, TemplateView
+from compsoc_website_django.views import HTTP404View
+import settings
 
 from django.contrib import admin
 admin.autodiscover()
@@ -17,3 +18,8 @@ urlpatterns = patterns('',
     url(r'^captcha/', include('captcha.urls')),
     url(r'^admin/', include(admin.site.urls)),
 )
+
+if settings.DEBUG:
+    urlpatterns += patterns('',
+        url(r'^404/$', HTTP404View.as_view()),
+    )
