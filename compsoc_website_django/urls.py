@@ -1,6 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.views.generic.base import RedirectView, TemplateView
-from compsoc_website_django.views import HTTP404View
+from compsoc_website_django.views import HTTP404View, HTTP500View
 import settings
 
 from django.contrib import admin
@@ -22,4 +22,5 @@ urlpatterns = patterns('',
 if settings.DEBUG:
     urlpatterns += patterns('',
         url(r'^404/$', HTTP404View.as_view()),
+        url(r'^500/$', HTTP500View.as_view()),
     )

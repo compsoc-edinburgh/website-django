@@ -26,6 +26,9 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
+LOGIN_URL = '/ilwhack/login/'
+LOGIN_REDIRECT_URL = '/ilwhack/'
+
 MARKDOWN_DEUX_STYLES = {
     "trusted": {
         "extras": {
@@ -52,6 +55,7 @@ INSTALLED_APPS = (
     'ledger',
     'captcha',
     'south',
+    'crispy_forms',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -81,6 +85,8 @@ DATABASES = {
 SOUTH_MIGRATION_MODULES = {
     'captcha' : 'ignore',
 }
+
+CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
 # Internationalization
 # https://docs.djangoproject.com/en/1.6/topics/i18n/
