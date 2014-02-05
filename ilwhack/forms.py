@@ -21,7 +21,7 @@ class RegisterForm(UserCreationForm):
     display_name = forms.CharField(max_length=200)
     email = forms.EmailField()
     matric_no = MatricField(max_length=8)
-    bio = forms.CharField(widget=forms.Textarea)
+    bio = forms.CharField(widget=forms.Textarea, required=False)
     captcha = CaptchaField()
 
 class ProfileForm(forms.ModelForm):
