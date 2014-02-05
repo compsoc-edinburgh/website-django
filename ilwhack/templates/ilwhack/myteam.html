@@ -1,0 +1,69 @@
+{% extends 'ilwhack/page.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<article>
+    <div class="post-header"><h1>Your Team</h1></div>
+    
+    {% if user.participant.team %}
+    <p>
+        Congrats, you're in team <strong>{{ user.participant.team.name }}</strong>!
+    </p>
+    <p><a href="/ilwhack/myteam/leave/" class="btn btn-primary">Leave</a></p>
+    <p>
+        <h3>{{ team.name }}</h3>
+        <h5>Members</h5>
+        <ul id="memberlist">
+            {% for member in user.participant.team.members.all %}
+                <li><span data-toggle="tooltip" title="{{ member.bio }}">
+                
+                {% if member.is_leader %}
+                    <strong>{{ member.display_name }}</strong> (Leader)
+                {% else %}
+                    {{ member.display_name }}
+                    {% if user.participant.is_leader %}
+                        (<a href="/ilwhack/myteam/makeleader/{{ member.user.id }}/">Make Leader</a>)
+                    {% endif %}
+                {% endif %}
+                </span></li>
+            {% endfor %}
+        </ul>
+    </p>
+    
+    {% else %}
+    <p>
+        You're not in a team D: <br/>
+        Join one to start hacking!
+    </p>
+    <p><a href="/ilwhack/teams/" class="btn btn-primary">Find a Team!</a></p>
+    {% endif %}
+    
+    <h1>Your Project</h1>
+    {% if not user.participant.team.project %}
+        <p>You don't have a project yet!</p>
+    {% endif %}
+    
+    <!--
+    {% if user.participant.is_leader %}
+        <p>Update your team's project info here:</p>
+        <form method="post">
+            {{ form|crispy }}
+            {% csrf_token %}
+            <input type="submit" class="btn" value="Save" />
+        </form>
+    {% else %}
+        </p><em>Name:</em> {{ user.participant.team.project.name }}</p>
+        Pitch: <p>{{ user.participant.team.project.pitch }}</p>
+        <p> Web: {{ user.participant.team.project.web }} </p>
+        <p> Repo: {{ user.participant.team.project.repo }} </p>
+        
+    {% endif %}
+    -->
+</article>
+{% endblock %}
+
+{% block scripts %}
+<script type="text/javascript">
+    $('#memberlist span').tooltip({})
+</script>
+{% endblock %}

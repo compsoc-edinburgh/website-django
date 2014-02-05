@@ -2,3 +2,5 @@ Django>=1.6.1
 django-simple-captcha
 django-markdown-deux
 South
+moment
+dango-crispy-forms

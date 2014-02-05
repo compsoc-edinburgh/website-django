@@ -11,7 +11,6 @@
     </article>
 {% endblock %}
 
-{% block sidebar %}
   <!--
     <form action="/ilwhack/login" method="POST" role="form" class="">
         <div class="form-group">
@@ -32,11 +31,50 @@
     <p class="text-warning">Registrations will be opening soon.</p>
 
     <hr />
-  -->
+  -->    
+  
+{% block navbar %}
+    <ul class="nav navbar-nav">                
+    {% for navpage in nav_pages %}
+        {% if navpage.name == page.name %}
+        <li class="active">
+        {% else %}
+        <li>
+        {% endif %}
+            <a href="{% url 'ilw-page' navpage.name %}">{{ navpage.nav_name }}</a>
+        </li>
+    {% endfor %}
+        <li><a href="/ilwhack/teams">Teams</a></li>
+    
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+        {% if user.is_authenticated %}
+            <!-- You are authenticated -->
+            <li><a href="/ilwhack/myaccount">Account</a></li>
+            <li><a href="/ilwhack/myprofile">Profile</a></li>
+            <li><a href="/ilwhack/myteam">Team</a></li>
+            <li><a href="/ilwhack/logout">Logout</a></li>
+        {% else %}
+            <!-- You are not authenticated -->
+            <li><a href="/ilwhack/login">Log In</a></li>
+            <li><a href="/ilwhack/register">Register</a></li>
+        {% endif %}
+    </ul>
+{% endblock %}
 
-    <div>
-	<h3>Sponsors:</h3>
-        <a href="https://www.edinburgh.gov.uk"><img class="sponsor-logo" src="/static/ilwhack/img/edinburgh_logo_220px.gif" /></a>
-        <a href="/compsoc"><img class="sponsor-logo" src="/static/compsoc/img/compsoc.png" class="img-responsive" alt="CompSoc"/></a>
-    </div>
+{% block sidebar %}
+    {% if user.is_authenticated %}
+        <!-- You are authenticated -->
+        {% if user.participant %}
+            <h4>Hello, <em>{{ user.participant.display_name }}</em>!</h4>
+        {% else %}
+            <p class="text-warning">
+                Warning: You are logged in with username <strong>{{ user.username }}</strong>, 
+                who does not have any ILWHack profile data (probably an administrative/compsoc 
+                account). Please log out and register a new account for the ILWHack.
+            </p>
+        {% endif %}
+    {% else %}
+        <!-- You are not authenticated -->
+    {% endif %}
 {% endblock %}

@@ -60,22 +60,9 @@
                 </div>
                 
                 <div class="navbar-collapse collapse">
-                    <ul class="nav navbar-nav">
+                    {% block navbar %}
                     
-                    {% for navpage in nav_pages %}
-                        {% if navpage.name == page.name %}
-                        <li class="active">
-                        {% else %}
-                        <li>
-                        {% endif %}
-                            <a href="{% url 'ilw-page' navpage.name %}">{{ navpage.nav_name }}</a>
-                        </li>
-                    {% endfor %}
-                    
-                    </ul>
-                    <div class="nav navbar-nav navbar-right">
-                        <!-- nothing here for now -->
-                    </div>
+                    {% endblock %}
                 </div>
                 
             </div>
@@ -108,24 +95,13 @@
             
                     <aside class="col-sm-4 col-md-3 sidebar">  
                         {% block sidebar%}
-                            <form action="/ilwhack/login" method="POST" role="form" class="">
-                                <div class="form-group">
-                                    <label for="loginUsername">Username</label>
-                                    <input type="text" id="loginUsername" class="form-control" name="username" placeholder="Username" disabled="disabled">
-                                </div>
-                                <div class="form-group">
-                                    <label for="loginPassword">Password</label>
-                                    <input type="password" class="form-control" name="password" placeholder="Password" disabled="disabled">
-                                </div>
-                                <div class="form-group">
-                                    <div class="btn-group">
-                                        <button type="submit" class="btn btn-default" disabled="disabled">Login</button>
-                                        <a href="#/ilwhack/register" class="btn btn-default disabled">Register</a>
-                                    </div>
-                                </div>
-                            </form>
-                            <p class="text-warning">Registrations will be opening soon.</p>
                         {% endblock %}
+                            <div>
+                                <h3>Sponsors:</h3>
+                                <a href="https://www.edinburgh.gov.uk"><img class="img-responsive sponsor-logo" src="/static/ilwhack/img/edinburgh_logo_220px.gif" /></a>
+                                <a href="/compsoc"><img class="img-responsive sponsor-logo" src="/static/compsoc/img/compsoc.png" alt="CompSoc"/></a>
+                                <a href="http://scot.okfn.org/"><img class="img-responsive sponsor-logo" src="/static/ilwhack/img/okf-scot-logo-portrait-m.png" /></a>
+                            </div>
                     </aside>
                 </div>
         
@@ -152,6 +128,7 @@
         <script src="{% static 'ilwhack/js/jquery-1.10.2.min.js' %}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static 'ilwhack/js/bootstrap.min.js' %}"></script>
+        {% block scripts %}{% endblock %}
   </body>
 
 

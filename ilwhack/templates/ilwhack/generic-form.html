@@ -1,0 +1,20 @@
+{% extends 'ilwhack/page.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<article>
+    <div class="post-header"><h1>{% block formtitle %}{% endblock %}</h1></div>
+
+    <div class="row">
+        <div class="col-md-8">
+        
+            <form method="post">
+                {{ form|crispy }}
+                {% csrf_token %}
+                <input type="submit" class="btn" value="{% block submitvalue %}Done{% endblock %}" />
+            </form>
+            
+        </div>
+    </div>
+</article>
+{% endblock %}

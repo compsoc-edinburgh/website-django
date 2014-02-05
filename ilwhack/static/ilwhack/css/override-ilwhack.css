@@ -564,3 +564,29 @@ img.sponsor-logo {
     margin-top: 8px;
     margin-bottom: 8px;
 }
+
+
+/* Teams! */
+.team-row {
+    background-color: #111;
+    margin-right: 4px;
+    border-top: 1px solid;
+}
+
+.team-row .btn {
+    margin: 8px;
+}
+
+.project {
+    padding-top: 8px;
+}
+
+.participant {
+    padding: 4px;
+}
+
+.participant div {
+    border: 1px dashed #111;
+    padding-left: 8px;
+    padding-right: 8px;
+}

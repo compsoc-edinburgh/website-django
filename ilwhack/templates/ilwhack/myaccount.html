@@ -1,0 +1,13 @@
+{% extends 'ilwhack/page.html' %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+<article>
+    <div class="post-header"><h1>Your Account</h1></div>
+    
+    <p>Your username is: <strong>{{ user.username }}</strong></p>
+    <p>Your email is: <strong>{{ user.email }}</strong></p>
+    <p>To change your password, <a href="/ilwhack/myaccount/changepassword">click here</a>.</p>
+    
+</article>
+{% endblock %}
