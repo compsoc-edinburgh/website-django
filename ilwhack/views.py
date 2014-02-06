@@ -5,7 +5,7 @@ from django.contrib.auth.decorators import login_required, user_passes_test
 
 from django.contrib.auth.models import User
 from ilwhack.models import Page, Participant, Team, Project
-from ilwhack.forms import RegisterForm, ProfileForm, ProjectForm
+from ilwhack.forms import RegisterForm, ProfileForm, ProjectForm, CreateTeamForm
 
 
 def get_nav_pages():
@@ -104,6 +104,25 @@ def myteam_join(request, which):
     request.user.participant.team = Team.objects.get(id=which)
     request.user.participant.save()
     return HttpResponseRedirect('/ilwhack/myteam/')
+
+def check_not_in_team(user):
+    return not user.participant.team
+
+@login_required
+@user_passes_test(check_not_in_team)
+def myteam_create(request):
+    if request.method == 'POST':
+        form = CreateTeamForm(request.POST)
+        if form.is_valid():
+            team_name = form.cleaned_data['name']
+            userp = request.user.participant
+            team = Team.objects.create(name = team_name)
+            team.save()
+            userp.team = team
+            userp.is_leader = True
+            userp.save()
+    return HttpResponseRedirect('/ilwhack/myteam/')
+
 
 def check_is_leader(user):
     return user.participant.is_leader
