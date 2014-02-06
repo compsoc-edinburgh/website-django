@@ -13,6 +13,7 @@ urlpatterns = patterns('',
     
     url(r'^myteam/$', 'ilwhack.views.myteam'),
     url(r'^myteam/leave/', 'ilwhack.views.myteam_leave'),
+    url(r'^myteam/create/', 'ilwhack.views.myteam_create'),
     url(r'^myteam/join/(\d+)/', 'ilwhack.views.myteam_join'),
     url(r'^myteam/makeleader/(\d+)/', 'ilwhack.views.myteam_makeleader'),
     

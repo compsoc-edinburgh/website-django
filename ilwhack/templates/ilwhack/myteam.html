@@ -36,6 +36,20 @@
         Join one to start hacking!
     </p>
     <p><a href="/ilwhack/teams/" class="btn btn-primary">Find a Team!</a></p>
+    <div class="row">
+        <div class="col-md-4">
+            Or make a new team:
+            <form action="/ilwhack/myteam/create/" method="post" role="form" class="form-inline">
+                <div class="input-group">
+                    <input type="text" class="form-control" name="name" placeholder="Team Name" />
+                    <span class="input-group-btn">
+                        <input type="submit" class="btn btn-primary" value="Create!" style="height: 34px" />
+                    </span>
+                </div>
+                {% csrf_token %}
+            </form>
+        </div>
+    </div>
     {% endif %}
     
     <h1>Your Project</h1>

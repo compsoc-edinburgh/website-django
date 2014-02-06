@@ -3,7 +3,7 @@ from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from captcha.fields import CaptchaField
 # ILWHack forms
-from ilwhack.models import Participant, Project
+from ilwhack.models import Participant, Project, Team
 
 class MatricField(forms.CharField):
     def __init__(self, **kwargs):
@@ -32,3 +32,8 @@ class ProfileForm(forms.ModelForm):
 class ProjectForm(forms.ModelForm):
     class Meta:
         model = Project
+
+class CreateTeamForm(forms.ModelForm):
+    class Meta:
+        model = Team
+        fields = ['name']
