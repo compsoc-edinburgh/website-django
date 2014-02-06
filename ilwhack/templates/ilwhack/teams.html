@@ -33,22 +33,28 @@
 
 
 <h1>People Without a Team</h1>
-<ul>
-{% for participant in participants %}
-<div class="col-xs-12 col-md-4 participant">
-    <div>
-        <h3>{{ participant.display_name }}</h3>
-        <p>{{ participant.bio }}</p>
-    </div>
+<div id="participants">
+    {% for participant in participants %}
+        <div class="participant">
+            <div>
+                <h3>{{ participant.display_name }}</h3>
+                <p>{{ participant.bio }}</p>
+            </div>
+        </div>
+    {% endfor %}
 </div>
-{% endfor %}
-</ul>
 
 
 {% endblock %}
 
 {% block scripts %}
+<script src="/static/ilwhack/js/masonry.pkgd.min.js"></script>
 <script type="text/javascript">
-    $('#memberlist span').tooltip({})
+    $('#memberlist span').tooltip({});
+    var $container = $('#participants');
+    $container.masonry({
+        //columnWidth: 200,
+        itemSelector: '.participant'
+    });
 </script>
 {% endblock %}
