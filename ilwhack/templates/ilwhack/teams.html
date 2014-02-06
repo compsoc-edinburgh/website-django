@@ -35,12 +35,14 @@
 <h1>People Without a Team</h1>
 <div id="participants">
     {% for participant in participants %}
+    {% if not participant.team %}
         <div class="participant">
             <div>
                 <h3>{{ participant.display_name }}</h3>
                 <p>{{ participant.bio }}</p>
             </div>
         </div>
+    {% endif %}
     {% endfor %}
 </div>
 

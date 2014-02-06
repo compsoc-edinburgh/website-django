@@ -50,7 +50,7 @@ class RegisterView(TemplateView):
                 bio = form.cleaned_data['bio']
             )
             
-            return HttpResponseRedirect('/ilwhack/')
+            return HttpResponseRedirect('/ilwhack/login/')
         
         else:
            return render(request, self.template_name, context)
