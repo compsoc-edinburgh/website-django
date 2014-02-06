@@ -27,7 +27,7 @@ class RegisterForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Participant
-        fields = ['display_name', 'bio', 'matric_no']
+        fields = ['display_name', 'bio']
         
 class ProjectForm(forms.ModelForm):
     class Meta:
