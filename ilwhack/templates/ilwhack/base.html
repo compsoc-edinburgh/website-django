@@ -20,16 +20,16 @@
     </head>
 
     <body>
-        <!-- 
+        {% if not user.is_authenticated %}
         <aside class="announce">
             <div class="container">
                 <div class="alert alert-info alert-dismissable">
-                    TODO PUT ANNOUNCEMENTS HERE
+                    Make sure you <a href="/ilwhack/register/">register</a> today!
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
             </div>
         </aside>
-        -->
+        {% endif %}
 
         <header class="header">
             <div class="container">            
