@@ -83,7 +83,7 @@ DATABASES = {
 }
     
 SOUTH_MIGRATION_MODULES = {
-    'captcha' : 'ignore',
+    'captcha': 'ignore',
 }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
@@ -107,4 +107,4 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = [ os.path.join(BASE_DIR, 'templates') ]
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]

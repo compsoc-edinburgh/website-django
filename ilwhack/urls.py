@@ -27,4 +27,3 @@ urlpatterns = patterns('',
         {'template_name': 'ilwhack/changepassword.html', 'post_change_redirect': '/ilwhack/myaccount'}),
 
 )
-  
