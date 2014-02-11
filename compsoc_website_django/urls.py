@@ -1,5 +1,5 @@
 from django.conf.urls import patterns, include, url
-from django.views.generic.base import RedirectView, TemplateView
+from django.views.generic.base import RedirectView
 from compsoc_website_django.views import HTTP404View, HTTP500View
 import settings
 
