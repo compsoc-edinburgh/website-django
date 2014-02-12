@@ -561,8 +561,10 @@ table.table td {
     
 /* Sponsor's logos */
 img.sponsor-logo {
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid #111;
 }
 
 

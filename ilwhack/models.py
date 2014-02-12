@@ -14,7 +14,9 @@ class Page(models.Model):
 
 class Participant(models.Model):
     display_name = models.CharField(max_length=200)
+    real_name = models.CharField(max_length=200, blank=True, null=True)
     matric_no = models.CharField(max_length=8)
+    department = models.CharField(max_length=100, help_text='E.g. Informatics, Business, Design, etc')
     bio = models.TextField()
     is_leader = models.BooleanField(default=False)
     team = models.ForeignKey('Team', null=True, related_name='members')
@@ -61,3 +63,15 @@ class Project(models.Model):
     
     def __unicode__(self):
         return self.name
+
+class ProjectPhoto(models.Model):
+    caption = models.TextField(blank=True, null=True)
+    file = models.ImageField(upload_to='project-photos/')
+    project = models.ForeignKey(Project, related_name='photos')
+    
+    def __unicode__(self):
+        if self.caption:
+            return '' + self.project.name + ': ' + self.caption[0:20]
+        else:
+            return '' + self.project.name + ': Photo ID#' + str(self.id)
+    

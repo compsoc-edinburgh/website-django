@@ -48,8 +48,10 @@ class RegisterView(TemplateView):
             Participant.objects.create(
                 user=newuser,
                 display_name=form.cleaned_data['display_name'],
+                real_name=form.cleaned_data['real_name'],
                 matric_no=form.cleaned_data['matric_no'],
-                bio=form.cleaned_data['bio']
+                bio=form.cleaned_data['bio'],
+                department = form.cleaned_data['department']
             )
             
             return HttpResponseRedirect('/ilwhack/login/')

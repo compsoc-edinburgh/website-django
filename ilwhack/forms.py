@@ -18,8 +18,10 @@ class MatricField(forms.CharField):
 
 class RegisterForm(UserCreationForm):
     display_name = forms.CharField(max_length=200)
+    real_name = forms.CharField(max_length=100)
     email = forms.EmailField()
     matric_no = MatricField(max_length=8)
+    department = forms.CharField(max_length=100, help_text='E.g. Informatics, Business, Design, etc.')
     bio = forms.CharField(widget=forms.Textarea, required=False)
     captcha = CaptchaField()
 
@@ -27,7 +29,7 @@ class RegisterForm(UserCreationForm):
 class ProfileForm(forms.ModelForm):
     class Meta:
         model = Participant
-        fields = ['display_name', 'bio']
+        fields = ['display_name', 'real_name', 'department', 'bio']
 
 
 class ProjectForm(forms.ModelForm):

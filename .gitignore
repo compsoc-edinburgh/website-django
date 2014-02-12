@@ -7,5 +7,6 @@
 local_settings.py
 migrations/
 COMPSOCENV/
+media/*
 */.idea/workspace.xml
 */.idea/tasks.xml
