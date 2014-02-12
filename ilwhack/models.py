@@ -14,7 +14,7 @@ class Page(models.Model):
 
 class Participant(models.Model):
     display_name = models.CharField(max_length=200)
-    real_name = models.CharField(max_length=200, blank=True, null=True)
+    real_name = models.CharField(max_length=200, blank=True)
     matric_no = models.CharField(max_length=8)
     department = models.CharField(max_length=100, help_text='E.g. Informatics, Business, Design, etc')
     bio = models.TextField()
@@ -71,7 +71,10 @@ class ProjectPhoto(models.Model):
     
     def __unicode__(self):
         if self.caption:
-            return '' + self.project.name + ': ' + self.caption[0:20]
+            if len(self.caption) < 36:
+                return '' + self.project.name + ': ' + self.caption
+            else:
+                return '' + self.project.name + ': ' + self.caption[0:36] + '...'
         else:
             return '' + self.project.name + ': Photo ID#' + str(self.id)
     
