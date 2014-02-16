@@ -82,9 +82,9 @@ DATABASES = {
     }
 }
     
-SOUTH_MIGRATION_MODULES = {
-    'captcha': 'ignore',
-}
+#SOUTH_MIGRATION_MODULES = {
+#    'captcha': 'ignore',
+#}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
