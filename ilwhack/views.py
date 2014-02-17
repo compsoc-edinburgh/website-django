@@ -136,7 +136,7 @@ def myteam_create(request):
 
 
 def check_is_leader(user):
-    return user.participant.is_leader
+    return (True and user.participant.team and user.participant.is_leader)
 
 
 @login_required
@@ -144,6 +144,38 @@ def check_is_leader(user):
 def myteam_makeleader(request, who):
     request.user.participant.give_leader_to(User.objects.get(id=who).participant)
     return HttpResponseRedirect('/ilwhack/myteam/')    
+
+@login_required
+@user_passes_test(check_is_leader)
+def project(request):
+    """Enable a team leader to Update (or create) their team's project."""
+    if request.method == 'POST':
+        
+        def _get_project(participant):
+            if participant.team.project:
+                return participant.team.project
+            else:
+                project = Project.objects.create(name='A Project', pitch='')
+                participant.team.project = project
+                participant.team.save()
+                return project
+        
+        form = ProjectForm(request.POST, instance=_get_project(request.user.participant))
+        
+        if form.is_valid():
+            form.save()
+        
+        context = get_base_context()
+        context["form"] = form
+        return render(request, 'ilwhack/project.html', context)
+        
+    else:
+        
+        form = ProjectForm(instance=request.user.participant.team.project)
+        
+        context = get_base_context()
+        context["form"] = form
+        return render(request, 'ilwhack/project.html', context)
 
 
 def teams(request):

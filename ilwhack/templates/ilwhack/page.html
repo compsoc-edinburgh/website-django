@@ -44,20 +44,23 @@
             <a href="{% url 'ilw-page' navpage.name %}">{{ navpage.nav_name }}</a>
         </li>
     {% endfor %}
-        <li><a href="/ilwhack/teams">Teams</a></li>
+        <li><a href="/ilwhack/teams/">Teams</a></li>
     
     </ul>
     <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
             <!-- You are authenticated -->
-            <li><a href="/ilwhack/myaccount">Account</a></li>
-            <li><a href="/ilwhack/myprofile">Profile</a></li>
-            <li><a href="/ilwhack/myteam">My Team</a></li>
-            <li><a href="/ilwhack/logout">Logout</a></li>
+            {% if user.participant.team and user.participant.is_leader %}
+            <li><a href="/ilwhack/project/">Project</a></li>
+            {% endif %}
+            <li><a href="/ilwhack/myaccount/">Account</a></li>
+            <li><a href="/ilwhack/myprofile/">Profile</a></li>
+            <li><a href="/ilwhack/myteam/">My Team</a></li>
+            <li><a href="/ilwhack/logout/">Logout</a></li>
         {% else %}
             <!-- You are not authenticated -->
-            <li><a href="/ilwhack/login">Log In</a></li>
-            <li><a href="/ilwhack/register" class="btn-primary" style="color: #111;">Register</a></li>
+            <li><a href="/ilwhack/login/">Log In</a></li>
+            <li><a href="/ilwhack/register/" class="btn-primary" style="color: #111;">Register</a></li>
         {% endif %}
     </ul>
 {% endblock %}

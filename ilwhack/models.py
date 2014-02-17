@@ -19,7 +19,7 @@ class Participant(models.Model):
     department = models.CharField(max_length=100, help_text='E.g. Informatics, Business, Design, etc')
     bio = models.TextField()
     is_leader = models.BooleanField(default=False)
-    team = models.ForeignKey('Team', null=True, related_name='members')
+    team = models.ForeignKey('Team', null=True, blank=True, related_name='members')
     user = models.OneToOneField(User)
     
     def leave_team(self):

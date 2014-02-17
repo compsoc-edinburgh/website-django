@@ -21,7 +21,16 @@
             </ul>
         </div>
         <div class="col-xs-12 col-md-5 project">
-            <h4>No project yet!</h4>
+            {% if team.project %}
+                <h4>{{ team.project.name }}</h4>
+                <p>{{ team.project.pitch }}</p>
+                {% if perms.ilwhack.extra_info %}
+                    <p><strong>Web:</strong> {{ team.project.web }}</p>
+                    <p><strong>Repo:</strong> {{ team.project.repo }}</p>
+                {% endif %}
+            {% else %}
+                <h4>No project yet!</h4>
+            {% endif %}
         </div>
         {% if user.participant and not user.participant.team %}
         <div class="col-md-2">

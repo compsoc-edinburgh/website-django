@@ -67,6 +67,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+INTERNAL_IPS = ['127.0.0.1']
+
 ROOT_URLCONF = 'compsoc_website_django.urls'
 
 WSGI_APPLICATION = 'compsoc_website_django.wsgi.application'

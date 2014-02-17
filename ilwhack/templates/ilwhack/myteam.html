@@ -52,10 +52,9 @@
     </div>
     {% endif %}
     
+    
     <h1>Your Project</h1>
-    {% if not user.participant.team.project %}
-        <p>You don't have a project yet!</p>
-    {% endif %}
+    <p>If you are the team leader, use the Project tab to edit your project info.</p>
     
     <!--
     {% if user.participant.is_leader %}
