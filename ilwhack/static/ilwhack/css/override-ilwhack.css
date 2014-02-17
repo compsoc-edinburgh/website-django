@@ -560,11 +560,26 @@ table.table td {
     }
     
 /* Sponsor's logos */
+
+@media (min-width: 768px) {
+img.sponsor-logo {
+    margin: 24px;
+    max-width: 400px;
+    max-height: 100px;
+    height: auto;
+}
+}
+
+@media (max-width: 768px) {
 img.sponsor-logo {
     margin-top: 24px;
     margin-bottom: 24px;
     padding-bottom: 24px;
     border-bottom: 1px solid #111;
+    width: 90%;
+    max-width: 400px;
+    height: auto;
+}
 }
 
 
@@ -596,3 +611,9 @@ img.sponsor-logo {
 
 
 /* Doge! */
+.header-img-doge {
+    border: 3px solid #FFF;
+    border-radius: 8px;
+    -moz-border-radius: 8px;
+    -webkit-border-radius: 8px;
+}
