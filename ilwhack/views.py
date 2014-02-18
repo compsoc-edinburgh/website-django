@@ -138,6 +138,8 @@ def myteam_create(request):
 def check_is_leader(user):
     return (True and user.participant.team and user.participant.is_leader)
 
+def check_is_staff(user):
+    return user.is_staff
 
 @login_required
 @user_passes_test(check_is_leader)
@@ -176,6 +178,16 @@ def project(request):
         context = get_base_context()
         context["form"] = form
         return render(request, 'ilwhack/project.html', context)
+
+
+@login_required
+@user_passes_test(check_is_staff)
+def participants(request):
+    """Display a list of participants, for staff use."""
+    context = get_base_context()
+    context['participants'] = Participant.objects.all()
+    context['emails'] = ', '.join(set([ user['email'] for user in User.objects.filter(participant__isnull=False).values('email') ]))
+    return render(request, 'ilwhack/participants.html', context)
 
 
 def teams(request):

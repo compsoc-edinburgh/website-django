@@ -11,6 +11,7 @@ urlpatterns = patterns('',
     url(r'^myprofile/', 'ilwhack.views.myprofile'),
     url(r'^myaccount/$', 'ilwhack.views.myaccount'),
     url(r'^teams/', 'ilwhack.views.teams'),
+    url(r'^participants/$', 'ilwhack.views.participants'),
     
     url(r'^myteam/$', 'ilwhack.views.myteam'),
     url(r'^myteam/leave/', 'ilwhack.views.myteam_leave'),

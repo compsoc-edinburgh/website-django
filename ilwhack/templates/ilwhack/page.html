@@ -50,12 +50,17 @@
     <ul class="nav navbar-nav navbar-right">
         {% if user.is_authenticated %}
             <!-- You are authenticated -->
-            {% if user.participant.team and user.participant.is_leader %}
-            <li><a href="/ilwhack/project/">Project</a></li>
+            {% if user.is_staff %}
+                <li><a href="/ilwhack/participants/">Participants</a></li>
+                <li><a href="/admin/ilwhack/">Admin</a></li>
+            {% else %}
+                {% if user.participant.team and user.participant.is_leader %}
+                <li><a href="/ilwhack/project/">Project</a></li>
+                {% endif %}
+                <li><a href="/ilwhack/myaccount/">Account</a></li>
+                <li><a href="/ilwhack/myprofile/">Profile</a></li>
+                <li><a href="/ilwhack/myteam/">My Team</a></li>
             {% endif %}
-            <li><a href="/ilwhack/myaccount/">Account</a></li>
-            <li><a href="/ilwhack/myprofile/">Profile</a></li>
-            <li><a href="/ilwhack/myteam/">My Team</a></li>
             <li><a href="/ilwhack/logout/">Logout</a></li>
         {% else %}
             <!-- You are not authenticated -->

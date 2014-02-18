@@ -24,9 +24,9 @@
             {% if team.project %}
                 <h4>{{ team.project.name }}</h4>
                 <p>{{ team.project.pitch }}</p>
-                {% if perms.ilwhack.extra_info %}
-                    <p><strong>Web:</strong> {{ team.project.web }}</p>
-                    <p><strong>Repo:</strong> {{ team.project.repo }}</p>
+                {% if user.is_staff %}
+                    <p><strong>Web:</strong> <a href="{{ team.project.web }}">{{ team.project.web }}</a></p>
+                    <p><strong>Repo:</strong> <a href="{{ team.project.repo }}">{{ team.project.repo }}</a></p>
                 {% endif %}
             {% else %}
                 <h4>No project yet!</h4>
