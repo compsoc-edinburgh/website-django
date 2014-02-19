@@ -22,6 +22,6 @@
     {% load markdown_deux_tags %}
         <article>
             <h1>{{ ledger.date }}</h1></ br>
-            <p>{{ ledger.content|markdown }}</p>
+            <p>{{ ledger.content|markdown:"trusted" }}</p>
         </article>
 {% endblock %}
