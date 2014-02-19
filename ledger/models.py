@@ -6,4 +6,4 @@ class Ledger(models.Model):
     content = models.TextField()
 
     def __unicode__(self):
-        return self.content
+        return self.date.strftime('%d/%m/%Y at %H:%M')
