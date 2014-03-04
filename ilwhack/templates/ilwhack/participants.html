@@ -1,0 +1,41 @@
+{% extends 'ilwhack/page.html' %}
+
+{% block content %}
+<h1>Participants</h1>
+<p>Click the headers to sort</p>
+<table class="table sortable">
+    <thead>
+        <tr>
+            <th>Display Name</th>
+            <th>Real Name</th>
+            <th>Matric</th>
+            <th>Email</th>
+            <th>Department</th>
+            <th>Team Name</th>
+            <th>Is Leader?</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for participant in participants %}
+        <tr>
+            <td>{{ participant.display_name }}</td>
+            <td>{{ participant.real_name }}</td>
+            <td>{{ participant.matric_no }}</td>
+            <td>{{ participant.user.email }}</td>
+            <td>{{ participant.department }}</td>
+            <td>{{ participant.team.name }}</td>
+            <td>{{ participant.is_leader }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+
+<h1>All Emails</h1>
+<textarea class="form-control">{{ emails }}</textarea>
+{% endblock %}
+
+
+
+{% block scripts %}
+<script src="/static/ilwhack/js/sorttable.js"></script>
+{% endblock %}

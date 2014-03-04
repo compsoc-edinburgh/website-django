@@ -18,9 +18,9 @@
                 <li><span data-toggle="tooltip" title="{{ member.bio }}">
                 
                 {% if member.is_leader %}
-                    <strong>{{ member.display_name }}</strong> (Leader)
+                    <strong>{{ member.display_name }}</strong> - "{{ member.real_name }}" &lt;{{ member.user.email }}&gt; (Leader)
                 {% else %}
-                    {{ member.display_name }}
+                    {{ member.display_name }} - "{{ member.real_name }}" &lt;{{ member.user.email }}&gt;
                     {% if user.participant.is_leader %}
                         (<a href="/ilwhack/myteam/makeleader/{{ member.user.id }}/">Make Leader</a>)
                     {% endif %}
@@ -52,10 +52,9 @@
     </div>
     {% endif %}
     
+    
     <h1>Your Project</h1>
-    {% if not user.participant.team.project %}
-        <p>You don't have a project yet!</p>
-    {% endif %}
+    <p>If you are the team leader, use the Project tab to edit your project info.</p>
     
     <!--
     {% if user.participant.is_leader %}

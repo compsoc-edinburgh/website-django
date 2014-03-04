@@ -21,7 +21,16 @@
             </ul>
         </div>
         <div class="col-xs-12 col-md-5 project">
-            <h4>No project yet!</h4>
+            {% if team.project %}
+                <h4>{{ team.project.name }}</h4>
+                <p>{{ team.project.pitch }}</p>
+                {% if user.is_staff %}
+                    <p><strong>Web:</strong> <a href="{{ team.project.web }}">{{ team.project.web }}</a></p>
+                    <p><strong>Repo:</strong> <a href="{{ team.project.repo }}">{{ team.project.repo }}</a></p>
+                {% endif %}
+            {% else %}
+                <h4>No project yet!</h4>
+            {% endif %}
         </div>
         {% if user.participant and not user.participant.team %}
         <div class="col-md-2">

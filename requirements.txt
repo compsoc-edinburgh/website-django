@@ -4,3 +4,4 @@ django-markdown-deux
 South
 moment
 django-crispy-forms
+pillow

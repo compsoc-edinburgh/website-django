@@ -68,6 +68,8 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
+INTERNAL_IPS = ['127.0.0.1']
+
 ROOT_URLCONF = 'compsoc_website_django.urls'
 
 WSGI_APPLICATION = 'compsoc_website_django.wsgi.application'
@@ -83,9 +85,9 @@ DATABASES = {
     }
 }
     
-SOUTH_MIGRATION_MODULES = {
-    'captcha' : 'ignore',
-}
+#SOUTH_MIGRATION_MODULES = {
+#    'captcha': 'ignore',
+#}
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
@@ -108,4 +110,8 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-TEMPLATE_DIRS = [ os.path.join(BASE_DIR, 'templates') ]
+TEMPLATE_DIRS = [os.path.join(BASE_DIR, 'templates')]
+
+# Handling media files (file uploads)
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = '/media/'

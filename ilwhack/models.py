@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Page(models.Model):
     name = models.CharField(max_length=64)
     nav_name = models.CharField(max_length=128)
@@ -10,12 +11,15 @@ class Page(models.Model):
     def __unicode__(self):
         return self.nav_name
 
+
 class Participant(models.Model):
     display_name = models.CharField(max_length=200)
+    real_name = models.CharField(max_length=200, blank=True)
     matric_no = models.CharField(max_length=8)
+    department = models.CharField(max_length=100, help_text='E.g. Informatics, Business, Design, etc')
     bio = models.TextField()
     is_leader = models.BooleanField(default=False)
-    team = models.ForeignKey('Team', null=True, related_name='members')
+    team = models.ForeignKey('Team', null=True, blank=True, related_name='members')
     user = models.OneToOneField(User)
     
     def leave_team(self):
@@ -59,3 +63,18 @@ class Project(models.Model):
     
     def __unicode__(self):
         return self.name
+
+class ProjectPhoto(models.Model):
+    caption = models.TextField(blank=True, null=True)
+    file = models.ImageField(upload_to='project-photos/')
+    project = models.ForeignKey(Project, related_name='photos')
+    
+    def __unicode__(self):
+        if self.caption:
+            if len(self.caption) < 36:
+                return '' + self.project.name + ': ' + self.caption
+            else:
+                return '' + self.project.name + ': ' + self.caption[0:36] + '...'
+        else:
+            return '' + self.project.name + ': Photo ID#' + str(self.id)
+    

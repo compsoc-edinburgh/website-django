@@ -20,16 +20,16 @@
     </head>
 
     <body>
-        <!-- 
+        {% if not user.is_authenticated %}
         <aside class="announce">
             <div class="container">
                 <div class="alert alert-info alert-dismissable">
-                    TODO PUT ANNOUNCEMENTS HERE
+                    Make sure you <a href="/ilwhack/register/">register</a> today!
                     <button type="button" class="close" data-dismiss="alert">&times;</button>
                 </div>
             </div>
         </aside>
-        -->
+        {% endif %}
 
         <header class="header">
             <div class="container">            
@@ -40,9 +40,12 @@
                     <div class="col-xs-9 visible-xs">
                         <h1>Smart Data Hack</h1>
                     </div>
-                    <div class="col-sm-9 hidden-xs">
+                    <div class="col-sm-7 hidden-xs">
                         <h1>Smart Data Hack <small>2014</small></h1>
-                    </div>                    
+                    </div>
+                    <div class="col-sm-2 hidden-xs">
+                        <img class="header-img header-img-doge" src="/static/ilwhack/img/ilwhack-doge.png"/>
+                    </div>
                 </div>
             </div>
         </header>
@@ -88,6 +91,31 @@
                         {% block content %}
                             <p>CONTENT GOES HERE</p>
                         {% endblock %}
+                        
+                        <hr />
+                        <div id="sponsorlist">
+                            <h3>Our Sponsors:</h3>
+                            <a href="http://www.informatics-ventures.com/"><img class="sponsor-logo" src="/static/ilwhack/img/iv-logo-2.png" /></a>
+                            <a href="https://www.edinburgh.gov.uk"><img class="sponsor-logo" src="/static/ilwhack/img/edinburgh_logo_220px.gif" /></a>
+                            <a href="/compsoc"><img class="sponsor-logo" src="/static/compsoc/img/compsoc.png" alt="CompSoc"/></a>
+                            <a href="http://scot.okfn.org/"><img class="sponsor-logo" src="/static/ilwhack/img/okf-scot-logo-portrait-m.png" /></a>
+                            <a href="http://www.skyscanner.net/"><img class="sponsor-logo" src="/static/ilwhack/img/Skyscanner.png" /></a>
+                            <a href="http://www.foei.org/"><img class="sponsor-logo" src="/static/ilwhack/img/FoE.png" /></a>
+                            <a href="http://www.eusa.ed.ac.uk/"><img class="sponsor-logo" src="/static/ilwhack/img/s_eusa.png" /></a>
+                            <a href="http://www.tescobank.com/"><img class="sponsor-logo" src="/static/ilwhack/img/Tesco_bank.png" /></a>
+                            <a href="http://interface3.com/"><img class="sponsor-logo" style="background: #333; padding: 5px;" src="/static/ilwhack/img/I3-Logo.png" /></a>
+                            <a href="http://www.swirrl.com/"><img class="sponsor-logo" src="/static/ilwhack/img/swirrl-red.png" /></a>
+                            <a href="http://www.business-school.ed.ac.uk/"><img class="sponsor-logo" src="/static/ilwhack/img/uebs-logo.jpg" /></a>
+                        </div>
+                        <script src="/static/ilwhack/js/masonry.pkgd.min.js"></script>
+                        <script type="text/javascript">
+                            var $container = $('#sponsorlist');
+                            $container.masonry({
+                                columnWidth: 200,
+                                itemSelector: 'img'
+                            });
+                        </script>
+                        
                     </div>
             
             
@@ -96,12 +124,10 @@
                     <aside class="col-sm-4 col-md-3 sidebar">  
                         {% block sidebar%}
                         {% endblock %}
-                            <div>
-                                <h3>Sponsors:</h3>
-                                <a href="https://www.edinburgh.gov.uk"><img class="img-responsive sponsor-logo" src="/static/ilwhack/img/edinburgh_logo_220px.gif" /></a>
-                                <a href="/compsoc"><img class="img-responsive sponsor-logo" src="/static/compsoc/img/compsoc.png" alt="CompSoc"/></a>
-                                <a href="http://scot.okfn.org/"><img class="img-responsive sponsor-logo" src="/static/ilwhack/img/okf-scot-logo-portrait-m.png" /></a>
-                            </div>
+                        <div class="hidden-xs">
+                            <a class="twitter-timeline"  href="https://twitter.com/ilwhack"  data-widget-id="435375609468829696">Tweets by @ilwhack</a>
+                            <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+                        </div>                        
                     </aside>
                 </div>
         
@@ -114,11 +140,11 @@
                     <h3>About</h3>
                     <p>The Smart Data Hack is running as part of <a href="http://www.inf.ed.ac.uk/student-services/teaching-organisation/taught-course-information/informatics-innovative-learning-week-2013">Innovative Learning Week</a> in Informatics at the University of Edinburgh.</p>
                     <p>We hope to encourage partnerships between local businesses, community organisations and student developers, and promote the use of Open Data for creative, socially empowering applications.</p>
-                    <p>The twitter hashtag for the event is <strong>#ilwhack</strong>.</p>
                 </div>
                 <div class="col-xs-12 col-md-4">
                     <h3>Contact</h3>
                     <p>Email: <em>{ ilw-hack @ inf.ed.ac.uk }</em></p>
+                    <p>Follow us on twitter <strong><a href="https://twitter.com/ilwhack">@ilwhack</a></strong>!</p>
                 </div>
             </footer>
         </div>
@@ -128,6 +154,18 @@
         <script src="{% static 'ilwhack/js/jquery-1.10.2.min.js' %}"></script>
         <!-- Include all compiled plugins (below), or include individual files as needed -->
         <script src="{% static 'ilwhack/js/bootstrap.min.js' %}"></script>
+        {% if not debug %}
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+            (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+            m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+            ga('create', 'UA-47487752-2', 'comp-soc.com');
+            ga('send', 'pageview');
+
+        </script>
+        {% endif %}
         {% block scripts %}{% endblock %}
   </body>
 
