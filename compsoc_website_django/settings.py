@@ -56,6 +56,7 @@ INSTALLED_APPS = (
     'captcha',
     'south',
     'crispy_forms',
+    'profiles',
 )
 
 MIDDLEWARE_CLASSES = (

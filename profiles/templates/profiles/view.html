@@ -1,0 +1,50 @@
+{% extends "profiles/base.html" %}
+
+{% block content %}
+    {% if profile %}
+        <h1>{{ user.first_name }} {{ user.last_name }}'s Profile</h1>
+
+        <div id="profile-body">
+            <h3>{{ user.first_name }}'s Basic Details</h3>
+
+            <p><strong>Degree Programme: </strong> BSc Computer Science (Year 2)</p>
+
+            <div class="row">
+                <div class="col-md-1" style="margin-top: 10px;"><p><strong>Bio:</strong></p></div>
+                <div class="col-md-6"><pre>I am a person
+
+                I do stuff
+
+                .etc</pre></div>
+            </div>
+
+            {% if skills %}
+                <h3>{{ user.first_name }}'s Skills</h3>
+                <table class="table table-condensed" id="skill-table">
+                    <thead>
+                        <tr>
+                            <th>Skill</th>
+                            <th>Level</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for skill in skills %}
+                            <tr>
+                                <td>{{ skill.name }}</td>
+                                <td>{{ skill.level }}</td>
+                            </tr>
+                        {% endfor %}
+
+                    </tbody>
+                </table>
+            {% endif %}
+
+            {% if external_places %}
+                <h3>Find {{ user.first_name }} on</h3>
+            {% endif %}
+        </div>
+    {% else %}
+        <h1>Profile not found</h1>
+        <p>The profile you are looking for does not exist!  Check the username and try again.</p>
+    {% endif %}
+{% endblock %}

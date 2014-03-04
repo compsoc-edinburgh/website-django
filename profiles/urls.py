@@ -1,0 +1,11 @@
+from django.conf.urls import patterns, include, url
+
+
+urlpatterns = patterns('',
+    # Examples:
+    # url(r'^$', 'compsoc_website_django.views.home', name='home'),
+    # url(r'^blog/', include('blog.urls')),
+
+    # url(r'^$', 'ledger.views.home'),
+    url(r'^view/(?P<username>\w+)/$', 'profiles.views.view'),
+)
