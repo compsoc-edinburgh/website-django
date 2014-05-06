@@ -22,17 +22,16 @@
 
     <body>
         
-        <aside class="announce">
-            <div class="container">
-                <div class="alert alert-info alert-dismissable">
-                    
-                        Sign up to the <a href="/ilwhack">Smart Data Hack</a>, happenning this innovative learning week!
-                    
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {% for a in announcements %}
+            <aside class="announce">
+                <div class="container">
+                    <div class="alert alert-info alert-dismissable">
+                        {{ a.content }}
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
                 </div>
-            </div>
-        </aside>
-        
+            </aside>
+        {% endfor %}        
 
         <header class="header">
             <div class="container">

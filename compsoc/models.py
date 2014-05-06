@@ -22,3 +22,11 @@ class Event(models.Model):
     
     def __unicode__(self):
         return self.title
+
+
+class Announcement(models.Model):
+    content = models.TextField()
+    display = models.BooleanField(default=True)
+    
+    def __unicode__(self):
+        return self.content
