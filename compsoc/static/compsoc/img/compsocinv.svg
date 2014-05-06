@@ -14,7 +14,7 @@
    id="svg2"
    version="1.1"
    inkscape:version="0.48.4 r9939"
-   sodipodi:docname="compsoc2015.svg"
+   sodipodi:docname="compsocinv.svg"
    inkscape:export-filename="/home/anguspearson/Dropbox/compsoc2015.png"
    inkscape:export-xdpi="359.87524"
    inkscape:export-ydpi="359.87524">
@@ -27,11 +27,11 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="5.6568542"
-     inkscape:cx="146.61574"
-     inkscape:cy="28.044868"
+     inkscape:zoom="4"
+     inkscape:cx="173.28724"
+     inkscape:cy="38.523932"
      inkscape:document-units="px"
-     inkscape:current-layer="layer1"
+     inkscape:current-layer="text2985"
      showgrid="false"
      inkscape:window-width="1920"
      inkscape:window-height="994"
@@ -59,11 +59,17 @@
        id="text2985"
        transform="translate(-17.663793,-30.637931)">
       <path
-         d="m 11,1.5 0,5 20,0 0,5 -20,0 0,25 20,0 0,5 -20,0 0,-5 -5,0 0,-25 -5,0 0,30 5,0 0,5 5,0 0,5 30,0 0,-10 4.90625,0 0,5 5,0 0,5 25,0 0,-5 c 3.302083,0 6.604167,0 9.90625,0 l 0,5 15,0 0,-15 10,0 0,10 5,0 0,5 15,0 0,-5 4.6875,0 0,5 15,0 0,-15 10,0 0,-5 5,0 0,-5 5,0 0,-15 -5,0 0,-5 -5,0 0,-5 -25,0 0,5 20,0 0,5 5,0 0,10 -5,0 0,5 -15,0 0,15 -5,0 0,-35 c -3.22917,0 -6.45833,0 -9.6875,0 l 0,-5 -10,0 0,5 5,0 0,35 -5,0 0,-25 -5,0 0,5 -5,0 0,5 -5,0 0,-5 -5,0 0,-5 -5,0 0,25 -5,0 0,-35 -5,0 0,5 -4.90625,0 0,-5 -5,0 0,-5 -20,0 0,5 15,0 0,5 5,0 0,25 -5,0 0,5 -15,0 0,-5 -5,0 0,-25 -4.90625,0 0,-5 -5,0 0,-5 z m 34.90625,10 5,0 0,-5 -5,0 z m 5,0 0,25 15,0 0,-25 z m 34.90625,-5 5,0 0,5 5,0 0,5 5,0 0,5 5,0 0,-5 5,0 0,-5 -10,0 0,-5 -5,0 0,-5 -10,0 z m 25,5 5,0 0,-5 -5,0 z m 44.6875,10 0,-10 -15,0 0,10 z M 6,11.5 l 5,0 0,-5 -5,0 z"
-         transform="translate(17.663793,30.637931)"
+         d="m 28.663793,31.961154 0,5 20,0 0,5 -20,0 0,25 20,0 0,5 -20,0 0,-5 -5,0 0,-25 -5,0 0,30 5,0 0,5 5,0 0,5 30,0 0,-10 4.90625,0 0,5 5,0 0,5 25,0 0,-5 c 3.302083,0 6.604167,0 9.906247,0 l 0,5 15,0 0,-15 10,0 0,10 5,0 0,5 15,0 0,-5 4.6875,0 0,5 15,0 0,-15 10,0 0,-5 5,0 0,-5 5,0 0,-15 -5,0 0,-5 -5,0 0,-5 -25,0 0,5 20,0 0,5 5,0 0,10 -5,0 0,5 -15,0 0,15 -5,0 0,-35 c -3.22917,0 -6.45833,0 -9.6875,0 l 0,-5 -10,0 0,5 5,0 0,35 -5,0 0,-25 -5,0 0,5 -5,0 0,5 -5,0 0,-5 -5,0 0,-5 -5,0 0,25 -5,0 0,-35 -4.999997,0 0,5 -4.90625,0 0,-5 -5,0 0,-5 -20,0 0,5 15,0 0,5 5,0 0,25 -5,0 0,5 -15,0 0,-5 -5,0 0,-25 -4.90625,0 0,-5 -5,0 0,-5 z m 34.90625,10 5,0 0,-5 -5,0 z m 5,0 0,25 15,0 0,-25 z m 34.906247,-5 5,0 0,5 5,0 0,5 5,0 0,5 5,0 0,-5 5,0 0,-5 -10,0 0,-5 -5,0 0,-5 -10,0 z m 25,5 5,0 0,-5 -5,0 z m 44.6875,10 0,-10 -15,0 0,10 z m -149.499997,-10 5,0 0,-5 -5,0 z"
          id="path3017"
          inkscape:connector-curvature="0"
-         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+         sodipodi:nodetypes="ccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc"
+         style="fill:#ffffff" />
+      <path
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Fipps;-inkscape-font-specification:Fipps"
+         d="m 28.664043,36.96215 -2.5e-4,5 20,0 0,-5 z m -2.5e-4,5 -4.99975,0 -2.5e-4,25 5,0 z m 0,25 0,5 20,0 0,-5 z m 39.90625,-30 0,5 15,0 0,-5 z m 15,5 0,25 5,0 0,-25 z m 0,25 -15,0 0,5 15,0 z m -15,0 0.1,-25 -5.1,0 0,25 z m 34.905997,-30 2.5e-4,35 5,0 0,-25 5,0 0,-5 -5,0 0,-5 z m 10.00025,10 0,5 5,0 0,-5 z m 5,5 0,5 5,0 0,-5 z m 5,0 5,0 0,-5 -5,0 z m 5,-5 5,0 0,25 5,0 0,-35 -5,0 0,5 -5,0 z m 24.6875,-10 0,35 5,0 0,-15 15,0 0,-5 -15,0 0,-10 15,0 0,-5 z m 20,5 0,10 5,0 0,-10 z"
+         id="rect2988-1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     </g>
     <g
        style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ce0e00;fill-opacity:1;stroke:none;font-family:Fipps;-inkscape-font-specification:Fipps"
@@ -75,6 +81,12 @@
          id="path3008"
          inkscape:connector-curvature="0"
          sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
+      <path
+         style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#ffffff;fill-opacity:1;stroke:none;font-family:Fipps;-inkscape-font-specification:Fipps"
+         d="m 202.01185,35.360618 0,5 20,0 -0.1,-5 z m 0,5 -5,0 0,10 5,0 z m 0,10 0,5 15,0 0,-5 z m 15,5 0,10 5,0 0,-10 z m 0,10 -20,0 0,5 20,0 z m 24.781,-30 2.5e-4,5 15,0 0,-5 z m 15.00025,5 0,25 5,0 0,-25 z m 0,25 -15,0 0,5 15,0 z m -15,0 0,-25 -5.00025,0 2.5e-4,25 z m 39.49975,-30 2.5e-4,5 20,0 0,-5 z m 2.5e-4,5 -5.00025,0 3e-4,25 5,0 z m 0,25 0,5 20,0 0,-5 z"
+         id="rect2990-1"
+         inkscape:connector-curvature="0"
+         sodipodi:nodetypes="cccccccccccccccccccccccccccccccccccccccccccccccccccccccccccc" />
     </g>
   </g>
 </svg>
