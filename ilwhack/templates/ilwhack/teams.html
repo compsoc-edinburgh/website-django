@@ -4,6 +4,7 @@
 <h1>The Teams!</h1>
 
 {% for team in teams %}
+  {% if team.project %}
     <div class="row team-row">
         <div class="col-xs-12 col-md-5 team">
             <h3>{{ team.name }}</h3>
@@ -34,10 +35,11 @@
         </div>
         {% if user.participant and not user.participant.team %}
         <div class="col-md-2">
-            <a href="/ilwhack/myteam/join/{{ team.id }}/" class="btn btn-primary">Join</a>
+            <a href="/ilwhak/myteam/join/{{ team.id }}/" class="btn btn-primary">Join</a>
         </div>
         {% endif %}
     </div>
+  {% endif %}
 {% endfor %}
 
 

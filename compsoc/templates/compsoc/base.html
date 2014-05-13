@@ -25,17 +25,16 @@
 
     <body>
         
-        <aside class="announce">
-            <div class="container">
-                <div class="alert alert-info alert-dismissable">
-                    
-                        COme along to the AGM happening on the 26<sup>th</sup> of March
-                    
-                    <button type="button" class="close" data-dismiss="alert">&times;</button>
+        {% for a in announcements %}
+            <aside class="announce">
+                <div class="container">
+                    <div class="alert alert-info alert-dismissable">
+                        {{ a.content|safe }}
+                        <button type="button" class="close" data-dismiss="alert">&times;</button>
+                    </div>
                 </div>
-            </div>
-        </aside>
-        
+            </aside>
+        {% endfor %}        
 
         <header class="header">
             <div class="container">
