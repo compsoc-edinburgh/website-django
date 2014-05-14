@@ -299,8 +299,7 @@ body {
 
 .gallery {
     padding: 0px 15px;
-    padding-bottom: 15px;
-    border-bottom: 3px dashed #DBCBBB;
+    /*border-bottom: 3px dashed #DBCBBB;*/
     margin-left: -30px;
     margin-right: -30px;
     /* Override some .row properties so 
@@ -313,6 +312,10 @@ body {
 	text-transform: uppercase;
 	font-size: 16px;
 	font-family: 'Fjalla One', Helvetica, Helvetica-Neue, arial, sans-serif;
+    }
+
+    .gallery .row {
+	padding-bottom: 15px;
     }
 
 
