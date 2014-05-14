@@ -19,6 +19,7 @@ class Event(models.Model):
     title = models.CharField(max_length=128)
     description = models.TextField()
     url = models.URLField(blank=True)
+    is_in_gallery = models.BooleanField(default=False)
     
     def __unicode__(self):
         return self.title

@@ -100,45 +100,24 @@
                 <!-- Optional 3 column gallery: -->
                 <section class="gallery row">
                     
-                    <div class="col-sm-4">
-                        <h3>November STMU</h3>
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-12 col-md-5">
-                                <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/pub-crawl.jpg" %}">
-                            </div>
-                            <div class="col-xs-8 col-sm-12 col-md-7">
-                                <p>Come on Friday the 29th to the Informatics Forum for free pizza! Someone also mentioned some tech talks and stuff...</p>
-                                <em>2013-11-29 18:00 to 20:00</em>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <h3>New New Compsoc Website</h3>
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-12 col-md-5">
-                                <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/authurs-seat.jpg" %}">
-                            </div>
-                            <div class="col-xs-8 col-sm-12 col-md-7">
-                                <p>Apparently there's a SIG for this but there's a bunch of first years on it so don't get your
-                                hopes up... Anyone have experience building sites in Haskell??! <sup>Not even joking<sup>oh god</sup></sup>
-                                YAY!
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="col-sm-4">
-                        <h3>Random Latin Because...</h3>
-                        <div class="row">
-                            <div class="col-xs-4 col-sm-12 col-md-5">
-                                <img class="img-responsive img-circle img-thumbnail centre" src="{% static "compsoc/img/game-night.png" %}">
-                            </div>
-                            <div class="col-xs-8 col-sm-12 col-md-7">
-                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer quis lorem ut lorem varius fringilla. Duis quis metus ligula. Donec ultricies posuere risus a fringilla.</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% for event in events %}
+		    {% if event.is_in_gallery %}
+
+		    <div class="col-sm-4">
+		      <h3>{{ event.title }}</h3>
+                      <div class="row">
+			<div class="col-zs-4 col-sm-12 col-md-5">
+			  <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.url }}">
+			</div>
+			<div class="col-xs-8 col-sm-12 col-md-7">
+			  <p>{{ event.description }}</p>
+			  <em>{{ event.when|date:'Y-m-d H:i' }}</em>
+			</div>
+		      </div>
+		    </div>
+
+		    {% endif %}
+		    {% endfor %}
                     
                 </section>
                 
