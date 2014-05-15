@@ -105,10 +105,10 @@
 		    <div class="col-sm-4">
 		      <h3>{{ event.title }}</h3>
                       <div class="row">
-			<div class="col-xs-4 col-sm-12 col-md-5">
-			  <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.url }}">
+			<div class="col-xs-4 col-sm-12 col-lg-5">
+			  <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.url }}" style="max-height: 150px;">
 			</div>
-			<div class="col-xs-8 col-sm-12 col-md-7">
+			<div class="col-xs-8 col-sm-12 col-lg-7">
 			  <p>{{ event.description }}</p>
 			  <em>{{ event.when|date:'Y-m-d H:i' }}</em>
 			</div>
@@ -122,7 +122,7 @@
                 
                 <!-- Main content and Sidebar: -->
                 <div class="main row" role="main">
-                    <div class="col-sm-8">
+                    <div class="col-md-8">
                         
                         <!-- MAIN PAGE CONTENT:  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   -->
                         
@@ -132,7 +132,7 @@
             
                     <!--  SIDEBAR  --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   --   -->
             
-                    <aside class="col-sm-4 sidebar">
+                    <aside class="col-md-4 sidebar">
                         
                         <h1>Events</h1>
 

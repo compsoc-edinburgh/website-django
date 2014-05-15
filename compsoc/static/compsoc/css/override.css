@@ -316,6 +316,7 @@ body {
 
     .gallery .row {
 	padding-bottom: 15px;
+	border-bottom:3px dashed #DBCBBB;
     }
 
 
@@ -345,7 +346,7 @@ body {
 	margin: 10px 0px;
     }
 
-@media (max-width: 768px ) {
+@media (max-width: 992px ) {
 
     .sidebar {
 	border: 0;
@@ -430,8 +431,7 @@ blockquote {
 
 
 /* ADDED CLASS: Centres Blocks and Text */
-.centre { text-align: center; margin: 0px auto; }
-
+.centre { text-align: center; margin: 0px auto; display: block; }
 
 code {
     background: #E9E9E9;
