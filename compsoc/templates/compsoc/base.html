@@ -100,7 +100,7 @@
                 <section class="gallery row">
                     
                     {% for event in events %}
-                        {% if event.is_in_gallery %}
+                        {% if event.is_in_gallery and page.name == "home"%}
 
                         <div class="col-sm-4">
                             <h3>{{ event.title }}</h3>
