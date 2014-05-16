@@ -314,6 +314,10 @@ body {
 	font-family: 'Fjalla One', Helvetica, Helvetica-Neue, arial, sans-serif;
     }
 
+    .gallery a {
+	color: #000;
+    }
+
     .gallery .row {
 	padding-bottom: 15px;
 	/*border-bottom:3px dashed #DBCBBB;*/
@@ -488,6 +492,10 @@ dd {
 	padding-bottom: 10px;
 	padding-top: 0px;
 	margin: 0;
+    }
+
+    .event a {
+	color: #000;
     }
     
     .event .event-description {
