@@ -100,23 +100,23 @@
                 <section class="gallery row">
                     
                     {% for event in events %}
-		    {% if event.is_in_gallery %}
+                        {% if event.is_in_gallery %}
 
-		    <div class="col-sm-4">
-		      <h3>{{ event.title }}</h3>
-                      <div class="row">
-			<div class="col-xs-4 col-sm-12 col-lg-5">
-			  <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.url }}" style="max-height: 150px;">
-			</div>
-			<div class="col-xs-8 col-sm-12 col-lg-7">
-			  <p>{{ event.description }}</p>
-			  <em>{{ event.when|date:'Y-m-d H:i' }}</em>
-			</div>
-		      </div>
-		    </div>
+                        <div class="col-sm-4">
+                            <h3>{{ event.title }}</h3>
+                            <div class="row">
+                                <div class="col-xs-4 col-sm-12 col-lg-5">
+                                    <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.url }}" style="max-height: 150px;">
+                                </div>
+                                <div class="col-xs-8 col-sm-12 col-lg-7">
+                                    <p>{{ event.description }}</p>
+                                    <em>{{ event.when|date:'Y-m-d H:i' }}</em>
+                                </div>
+                            </div>
+                        </div>
 
-		    {% endif %}
-		    {% endfor %}
+                    {% endif %}
+                {% endfor %}
                     
                 </section>
                 
