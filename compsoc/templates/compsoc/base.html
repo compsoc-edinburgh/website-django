@@ -100,13 +100,13 @@
                 <section class="gallery row">
                     
                     {% for event in events %}
-                        {% if event.is_in_gallery %}
+                        {% if event.is_in_gallery and page.name == "home" %}
 
                         <div class="col-sm-4">
-                            <h3>{{ event.title }}</h3>
+                            <h3><a href="{{ event.url }}">{{ event.title }}</a></h3>
                             <div class="row">
                                 <div class="col-xs-4 col-sm-12 col-lg-5">
-                                    <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.image_url }}" style="max-height: 150px;">
+                                  <img class="img-responsive img-circle img-thumbnail centre" src="{{ event.image_url }}" style="max-height: 150px;">
                                 </div>
                                 <div class="col-xs-8 col-sm-12 col-lg-7">
                                     <p>{{ event.description }}</p>
@@ -147,7 +147,7 @@
                                 <div class="event-time">{{ event.when|date:'H:i' }}</div>
                             </div>
                             <div class="event-description">
-                                <h2>{{ event.title }}</h2>
+                                <h2><a href="{{ event.url }}">{{ event.title }}</a></h2>
                                 <p>{{ event.description }}</p>
                             </div>
                             <div style="clear: both;"></div>
