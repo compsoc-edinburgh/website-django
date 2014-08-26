@@ -69,7 +69,7 @@
                             <a href="{% url 'compsoc-page' navpage.name %}">{{ navpage.nav_name }}</a>
                         </li>
                     {% endfor %}
-                    <li><a href="http://plone.comp-soc.com/compsoc/knowledgebase">KnowledgeBase</a></li>
+                    <li><a href="{{ site.url }}irc">IRC</a></li>
                     
                     </ul>
                     <!-- Navbar Search -->
@@ -160,8 +160,9 @@
                         {% block sidebar%}
                         <h1>Hop on the IRC Bandwaggon</h1>
                         <p>We have an IRC channel on irc.imaginarynet.org.uk, come along and chat on #compsoc.</p>
+			<p>GET ON IT <a href="{{ site.url }}irc">HERE</a></p> 
 			<p>There's also a meta channel for al the CompSocs in the UK, #compsoc-uk on freenode.</p>
-                        
+
                         <h1>Connect with us!</h1>
                         <p>Join the <a href="https://www.facebook.com/groups/compsocedinburgh/">Facebook group!</a> Get on IRC!</p>
                         {% endblock %}
