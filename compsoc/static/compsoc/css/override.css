@@ -246,7 +246,7 @@ body {
 #error-page {
     text-align: center;
     padding: 40px 0px;
-    background-image: url("https://api.bunnies.io/v1/gif/random.gif");
+    background-image: url("https://api.bunnies.io/v2/loop/random/redirect/?media=gif");
     background-position: center;
 }
 
