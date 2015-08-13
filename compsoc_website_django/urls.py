@@ -7,7 +7,8 @@ import settings
 from django.contrib import admin
 admin.autodiscover()
 
-urlpatterns = patterns('',
+urlpatterns = patterns(
+    '',
     # Examples:
     # url(r'^$', 'compsoc_website_django.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
@@ -22,7 +23,8 @@ urlpatterns = patterns('',
 
 # Error pages on development server
 if settings.DEBUG:
-    urlpatterns += patterns('',
+    urlpatterns += patterns(
+        '',
         url(r'^404/$', HTTP404View.as_view()),
         url(r'^500/$', HTTP500View.as_view()),
     )
