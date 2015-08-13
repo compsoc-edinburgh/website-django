@@ -39,7 +39,8 @@ class SearchView(TemplateView):
             context = get_base_context()
             # TODO make this more efficient maybe
             context['page_results'] = Page.objects.filter(content__icontains=query).values('name', 'title') or []
-            # context.event_results = Event.objects.filter(description__icontains=query).values('url', 'title') # TODO
+            # TODO something here, ask R2ZER0
+            # context.event_results = Event.objects.filter(description__icontains=query).values('url', 'title')
             context['query'] = query
             return render(request, self.template_name, context)
 
