@@ -24,7 +24,7 @@ class PageView(TemplateView):
         context['nav_pages'] = Page.objects.filter(is_in_navbar__exact=True).values('name', 'nav_name')
         context['events'] = Event.objects.filter(when__gte=datetime.date.today()).order_by('when').values()
 
-        return render(request, self.template_name,  context)
+        return render(request, self.template_name, context)
 
 
 class SearchView(TemplateView):
@@ -39,12 +39,14 @@ class SearchView(TemplateView):
             context = get_base_context()
             # TODO make this more efficient maybe
             context['page_results'] = Page.objects.filter(content__icontains=query).values('name', 'title') or []
-            #context.event_results = Event.objects.filter(description__icontains=query).values('url', 'title') # TODO
+            # TODO something here, ask R2ZER0
+            # context.event_results = Event.objects.filter(description__icontains=query).values('url', 'title')
             context['query'] = query
             return render(request, self.template_name, context)
 
         else:
             return render(request, self.template_name, {})
+
 
 class IrcView(TemplateView):
     template_name = 'compsoc/irc.html'
