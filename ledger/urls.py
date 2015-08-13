@@ -1,8 +1,7 @@
 from django.conf.urls import patterns, url
 
 
-urlpatterns = patterns(
-    '',
+urlpatterns = patterns('',
     # Examples:
     # url(r'^$', 'compsoc_website_django.views.home', name='home'),
     # url(r'^blog/', include('blog.urls')),
