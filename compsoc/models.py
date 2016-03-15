@@ -9,7 +9,7 @@ class Page(models.Model):
                                                                ('html', 'HTML')])
     title = models.CharField(max_length=128)
     content = models.TextField()
-    
+
     def __unicode__(self):
         return self.title
 
@@ -21,7 +21,7 @@ class Event(models.Model):
     url = models.URLField(blank=True)
     image_url = models.URLField(blank=True)
     is_in_gallery = models.BooleanField(default=False)
-    
+
     def __unicode__(self):
         return self.title
 
@@ -29,6 +29,6 @@ class Event(models.Model):
 class Announcement(models.Model):
     content = models.TextField()
     display = models.BooleanField(default=True)
-    
+
     def __unicode__(self):
         return self.content

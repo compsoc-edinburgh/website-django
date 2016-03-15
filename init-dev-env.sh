@@ -1,5 +1,5 @@
 #!/bin/sh
-virtualenv COMPSOCENV
+virtualenv --python=$(which python2) COMPSOCENV
 source COMPSOCENV/bin/activate
 pip install -r requirements.txt
 python manage.py syncdb

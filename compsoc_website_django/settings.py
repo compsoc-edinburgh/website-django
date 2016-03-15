@@ -83,10 +83,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-    
-#SOUTH_MIGRATION_MODULES = {
+
+# SOUTH_MIGRATION_MODULES = {
 #    'captcha': 'ignore',
-#}
+# }
 
 CRISPY_TEMPLATE_PACK = 'bootstrap3'
 
